@@ -1,0 +1,21 @@
+<h1>Update employee</h1>
+
+<%= form_for @employee do %>
+    <label>Email</label>
+    <input name="email" value ="<%= @employee.email %>" type="string"/>
+    <br>
+    <label>Name</label>
+    <input name="name" value ="<%= @employee.name %>" type="string"/>
+    <br>
+    <label>Position</label>
+    <input name="position" value ="<%= @employee.position %>" type="string"/>
+    <br>
+    <label>Employee Number</label>
+    <input name="employee" value ="<%= @employee.employee %>" type="string"/>
+    <br>
+    <label>Private Number</label>
+    <input name="number_private" value ="<%= @employee.number_private %>" type="string"/>
+    <br>
+    <button type="submit">save</button>
+    <a href="<%= employees_path %>"><button>Cancelar</button></a>
+<% end %>

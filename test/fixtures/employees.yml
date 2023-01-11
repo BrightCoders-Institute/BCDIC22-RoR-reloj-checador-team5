@@ -5,11 +5,11 @@ one:
   name: MyString
   position: MyString
   employee: MyString
-  private: MyString
+  number_private: MyString
 
 two:
   email: MyString
   name: MyString
   position: MyString
   employee: MyString
-  private: MyString
+  number_private: MyString

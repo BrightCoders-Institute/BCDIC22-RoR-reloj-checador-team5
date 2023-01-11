@@ -12,8 +12,13 @@
                 <li><%= employee.name %></li>
                 <li><%= employee.position %></li>
                 <li><%= employee.employee %></li>
-                <li><%= employee.private %></li>
+                <li><%= employee.number_private %></li>
             </ul>
+        </div>
+        <div>
+            <%= link_to 'Edit', edit_employee_path(employee)%>
+            <%= button_to 'Borrar', employee_path(employee),  method: :delete %>
         </div>
     </div>
 <% end %>
+
