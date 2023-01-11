@@ -1,0 +1,22 @@
+
+<h1>New employee</h1>
+
+<form action="<%= employees_path %>" method="POST">
+    <label>Email</label>
+    <input name="email" type="string">
+    <br>
+    <label>Name</label>
+    <input name="name" type="string" >
+    <br>
+    <label>Position</label>
+    <input name="position" type="string" >
+    <br>
+    <label>Employee Number</label>
+    <input name="employee" type="string" >
+    <br>
+    <label>Private Number</label>
+    <input name="private" type="string" >
+    <br>
+    <button type="submit">Add Employee</button>
+    <a href="<%= employees_path %>"><button>Cancelar</button></a>
+</form>
