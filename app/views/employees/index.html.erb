@@ -1,0 +1,23 @@
+<h1>Empleados</h1>
+
+<a href="<%= new_employee_path %>"><button>nuevo empleado</button></a>
+
+<div>
+    <% @employees.each do |employee| %>
+        <div class="employee">
+            <div class="content">
+                <ul>
+                    <li><%= employee.email %></li>
+                    <li><%= employee.name %></li>
+                    <li><%= employee.position %></li>
+                    <li><%= employee.employee %></li>
+                    <li><%= employee.number_private %></li>
+                </ul>
+            </div>
+            <div>
+                <%= link_to 'Edit', edit_employee_path(employee)%>
+                <%= button_to 'Borrar', employee_path(employee), method: :delete %>
+            </div>
+        </div>
+    <% end %>
+</div>
