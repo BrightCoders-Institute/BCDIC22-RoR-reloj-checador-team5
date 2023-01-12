@@ -3,31 +3,48 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
   end
 
+  def show
+    employee
+  end
+
   def new
     @employee = Employee.new
   end
 
   def create
-    Employee.create!(email: params['email'], name: params['name'], position: params['position'],
-                     employee: params['employee'], number_private: params['number_private'])
-
-    redirect_to action: :index
+    @employee = Employee.new(employee_params)
+    
+    if @employee.save
+      redirect_to employees_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @employee = Employee.find(params['id'])
+    employee
   end
 
   def update
-    employee = Employee.find(params['id'])
-    employee.update(email: params['email'], name: params['name'], position: params['position'],
-                    employee: params['employee'], number_private: params['number_private'])
-    redirect_to action: :index
+    if employee.update(employee_params)
+      redirect_to employees_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    Employee.find(params['id']).destroy
-
-    redirect_to action: :index
+    employee.destroy
+    redirect_to employees_path
   end
+
+  private
+    def employee_params
+      params.require(:employee).permit(:email, :name, :position, :employee, :number_private)
+    end
+
+    def employee
+      @employee = Employee.find(params[:id])
+    end
+
 end
