@@ -1,23 +1,26 @@
-<h1>Empleados</h1>
+<a href="<%= new_employee_path %>">
+	<button class="admin">ADMIN
+    <%= image_tag("/assets/admin.svg", alt: "Logo", width: "40", height: "40", class:"d-inline-block align-text-top") %>
+	</button>
+</a>
 
-<a href="<%= new_employee_path %>"><button>nuevo empleado</button></a>
-
-<div>
-    <% @employees.each do |employee| %>
-        <div class="employee">
-            <div class="content">
-                <ul>
-                    <li><%= employee.email %></li>
-                    <li><%= employee.name %></li>
-                    <li><%= employee.position %></li>
-                    <li><%= employee.employee %></li>
-                    <li><%= employee.number_private %></li>
-                </ul>
-            </div>
-            <div>
-                <%= link_to 'Edit', edit_employee_path(employee)%>
-                <%= button_to 'Borrar', employee_path(employee), method: :delete %>
-            </div>
-        </div>
-    <% end %>
+<div class="content">
+	<div class="time">
+		<h5 class="h5"><%= Time.now.strftime("%F")%></h5>
+    <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
+	<div>
+	<form class="checking__container">
+		<div class="mb-2">
+			<label for="inputEmployeeNumber" class="form-label">Employee Number</label>
+			<input type="number" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required placeholder="Ex: 20161102">
+		</div>
+		<div class="mb-2">
+			<label for="inputPrivateNumber" class="form-label">Private Number</label>
+			<input type="password" class="form-control" id="inputPrivateNumber"  placeholder="Ex: 2077" required>
+		</div>
+		<div class="check">
+			<button type="submit" class="btn btn-primary check__in">Check In</button>
+			<button type="submit" class="btn btn-primary check__off">Check Off</button>
+		</div>
+	</form>
 </div>
