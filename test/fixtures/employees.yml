@@ -1,15 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  employee: 1
   email: MyString
   name: MyString
-  position: MyString
-  employee: MyString
-  number_private: MyString
+  number_private: 1
+  is_employee: false
+  store: one
 
 two:
+  employee: 1
   email: MyString
   name: MyString
-  position: MyString
-  employee: MyString
-  number_private: MyString
+  number_private: 1
+  is_employee: false
+  store: two
