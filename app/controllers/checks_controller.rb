@@ -8,11 +8,7 @@ class ChecksController < ApplicationController
 
   def create
     check = Employee.find_by(check_params)
-    if !check.nil?
-      flash[:notice] = 'Successfully check'
-    else
-      flash[:alert] = 'Wrong paramater'
-    end
+    check.nil? ? flash[:notice] = 'Successfully check' : flash[:alert] = 'User no avalible'
 
     redirect_back(fallback_location: root_path)
   end

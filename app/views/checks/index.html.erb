@@ -5,7 +5,7 @@
 </a>
 
 <div class="content">
-	<div class="time">
+	<div class="time__container">
 		<h5 class="h5"><%= Time.now.strftime("%F")%></h5>
     <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
 	<div>
@@ -25,9 +25,9 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="check">
-			<button type="submit" id='checkin' class="btn btn-primary check__in">Check In</button>
-			<button type="submit" id='checkoff' class="btn btn-primary check__off">Check Off</button>
+		<div class="check__buttons_container">
+			<button type="submit" id='checkin' class="btn btn-primary check__buttons_container_in">Check In</button>
+			<button type="submit" id='checkoff' class="btn btn-primary check__buttons_container_off">Check Off</button>
 		</div>
 	</form>
 </div>
