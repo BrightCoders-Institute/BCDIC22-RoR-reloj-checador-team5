@@ -18,9 +18,16 @@
 			<label for="inputPrivateNumber" class="form-label">Private Number</label>
 			<input type="password" name="number_private" class="form-control" id="inputPrivateNumber"  placeholder="Ex: 2077" required>
 		</div>
+		<div class="message">
+			<% flash.each do |key, value| %>
+				<div class="message__content <%= key %>">
+					<%= value %>
+				</div>
+			<% end %>
+		</div>
 		<div class="check">
-			<button type="submit" class="btn btn-primary check__in">Check In</button>
-			<button type="submit" class="btn btn-primary check__off">Check Off</button>
+			<button type="submit" id='checkin' class="btn btn-primary check__in">Check In</button>
+			<button type="submit" id='checkoff' class="btn btn-primary check__off">Check Off</button>
 		</div>
 	</form>
 </div>

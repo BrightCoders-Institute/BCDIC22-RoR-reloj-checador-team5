@@ -24,6 +24,8 @@ $--secondary-color-dark: rgb(200, 175, 134);
 $--sencondary-color-light: #d98181;
 $--white-color: white;
 $--black-color: black;
+$--check-in-color: #75FF7D;
+$--check-off-color: #E65550;
 
 body {
 	background-color: $--primary-color-dark;
@@ -40,7 +42,7 @@ body {
 
 .time {
 	text-align: center;
-	font-family: 'minecraft enchantment', sans-serif;
+	font-family: sans-serif;
 	.h2{
 		font-size: 7rem;
 	}
@@ -53,7 +55,7 @@ body {
 	&__in {
 		border: 0;
 		color: $--black-color;
-		background-color: #75FF7D;
+		background-color: $--check-in-color;
 		&:hover {
 			background-color: #b4f5b8;
 		}
@@ -61,7 +63,7 @@ body {
 	&__off {
 		border: 0;
 		color: $--black-color;
-		background-color: #E65550;
+		background-color: $--check-off-color;
 		&:hover {
 			background-color: #e58581;
 		}
@@ -73,4 +75,21 @@ body {
 	margin: 2rem 0 0 2rem;
 	border: 0.2rem;
 	border-radius: 0.5rem;
+}
+
+.message {
+	&__content {
+		font-weight: bold;
+		background-color: $--white-color;
+		text-shadow: 0.5px 1px 1px darkblue;
+		padding: 0;
+		border-radius: 3rem;
+	}
+
+	.alert {
+		color: $--check-off-color,
+	}
+	.notice {
+		color: $--check-in-color;
+	}
 }

@@ -7,11 +7,19 @@ class ChecksController < ApplicationController
   end
 
   def create
-    @employee = Employee.where(employee: params['employee'], number_private: params['number_private'])
-    if @employee
-      puts 'aver'
+    check = Employee.find_by(check_params)
+    if !check.nil?
+      flash[:notice] = 'Successfully check'
     else
-      puts 'mamo'
+      flash[:alert] = 'Wrong paramater'
     end
+
+    redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def check_params
+    params.permit(:employee, :number_private)
   end
 end

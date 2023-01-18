@@ -2,16 +2,18 @@
 
 one:
   employee: 1
-  email: MyString
-  name: MyString
+  email: chaidowan@gmail.com
+  name: ElChido
+  position: ElAlbañil
   number_private: 1
-  is_employee: false
-  store: one
+  is_employee: true
 
 two:
-  employee: 1
-  email: MyString
-  name: MyString
-  number_private: 1
+  employee: 2
+  email: senoritarodolfo@gmail.com
+  name: rodolfe
+  position: elmaistro
+  number_private: 22
   is_employee: false
-  store: two
+
+# rails db:fixtures:load
