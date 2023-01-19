@@ -7,15 +7,25 @@ class ChecksController < ApplicationController
   end
 
   def create
-    check = Employee.find_by(check_params)
-    check.nil? ? flash[:notice] = 'Successfully check' : flash[:alert] = 'User no avalible'
+    @employee = Employee.find_by(employee_params)
+    puts @employee.name
+    if @employee != nil
+      @check = Check.new(check_params)
+      @check.save ? flash[:notice] = 'Successfully check' : flash[:alert] = 'Checking fail'
+    else
+      flash[:alert] = 'Wrong number or password'
+    end
 
     redirect_back(fallback_location: root_path)
   end
 
   private
 
-  def check_params
+  def employee_params
     params.permit(:employee, :number_private)
+  end
+
+  def check_params
+    params.require(:check).permit(:employee, :datetime, :check)
   end
 end

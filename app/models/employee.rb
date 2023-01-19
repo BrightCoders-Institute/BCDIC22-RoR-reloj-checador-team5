@@ -5,4 +5,6 @@ class Employee < ApplicationRecord
 	validates :position, presence: true
 	validates :number_private, presence: true
 	validates :is_employee, presence: true
+	# self.primary_key = "employee"
+	has_many :checks, foreign_key:"employee_id"
 end

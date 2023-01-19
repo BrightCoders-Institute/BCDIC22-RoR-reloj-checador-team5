@@ -10,6 +10,9 @@
     <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
 	<div>
 	<form class="checking__container" action="<%= checks_path %>" method="post">
+		<div>
+			<input type="datetime" value="<%= Time.now.strftime("%H:%M - %F")%>"  name="datetime" disabled hidden>
+		</div>
 		<div class="mb-2">
 			<label for="inputEmployeeNumber" class="form-label">Employee Number</label>
 			<input type="number" name="employee" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required placeholder="Ex: 20161102">
@@ -26,8 +29,8 @@
 			<% end %>
 		</div>
 		<div class="check__buttons_container">
-			<button type="submit" id='checkin' class="btn btn-primary check__buttons_container_in">Check In</button>
-			<button type="submit" id='checkoff' class="btn btn-primary check__buttons_container_off">Check Off</button>
+			<button type="submit" id='checkin' class="btn btn-primary check__buttons_container__in">Check In</button>
+			<button type="submit" id='checkoff' class="btn btn-primary check__buttons_container__off">Check Off</button>
 		</div>
 	</form>
 </div>
