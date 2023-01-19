@@ -14,20 +14,23 @@
  *= require_tree .
  *= require_self
  */
-@import "rails_bootstrap_forms";
-@import "bootstrap";
+@import 'rails_bootstrap_forms';
+@import 'bootstrap';
 @import url('https://fonts.cdnfonts.com/css/minecraft-4');
 
+$--black-color: black;
+$--check-in-color: #75FF7D;
+$--check-off-color: #E65550;
 $--primary-color-dark: #3a414d;
 $--primary-color-light: #6D9886;
 $--secondary-color-dark: rgb(200, 175, 134);
 $--sencondary-color-light: #d98181;
 $--white-color: white;
-$--black-color: black;
+$--shadow-text-color: hsl(240, 100%, 27%);
 
 body {
 	background-color: $--primary-color-dark;
-  font-size: 18px;
+  	font-size: 18px;
 }
 
 .content{
@@ -38,30 +41,30 @@ body {
 	padding: 3rem;
 }
 
-.time {
+.time__container {
 	text-align: center;
-	font-family: 'Minecraft', sans-serif;
+	font-family: sans-serif;
 	.h2{
 		font-size: 7rem;
 	}
 }
 
-.check {
-	margin-top: 1rem;
+.check__buttons_container {
 	display: flex;
+	margin-top: 1rem;
 	justify-content: space-between;
 	&__in {
 		border: 0;
+		background-color: $--check-in-color;
 		color: $--black-color;
-		background-color: #75FF7D;
 		&:hover {
 			background-color: #b4f5b8;
 		}
 	}
 	&__off {
+		background-color: $--check-off-color;
 		border: 0;
 		color: $--black-color;
-		background-color: #E65550;
 		&:hover {
 			background-color: #e58581;
 		}
@@ -70,7 +73,24 @@ body {
 
 .admin {
 	background-color: $--sencondary-color-light;
-	margin: 2rem 0 0 2rem;
 	border: 0.2rem;
 	border-radius: 0.5rem;
+	margin: 2rem 0 0 2rem;
+}
+
+.message {
+	&__content {
+		background-color: $--white-color;
+		border-radius: 3rem;
+		font-weight: bold;
+		padding: 0;
+		text-shadow: 0.5px 1px 1px $--shadow-text-color;
+	}
+
+	.alert {
+		color: $--check-off-color,
+	}
+	.notice {
+		color: $--check-in-color;
+	}
 }

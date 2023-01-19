@@ -1,0 +1,33 @@
+<a href="<%= new_employee_path %>">
+	<button class="admin">ADMIN
+    <%= image_tag("/assets/admin.svg", alt: "Logo", width: "40", height: "40", class:"d-inline-block align-text-top") %>
+	</button>
+</a>
+
+<div class="content">
+	<div class="time__container">
+		<h5 class="h5"><%= Time.now.strftime("%F")%></h5>
+    <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
+	<div>
+	<form class="checking__container" action="<%= checks_path %>" method="post">
+		<div class="mb-2">
+			<label for="inputEmployeeNumber" class="form-label">Employee Number</label>
+			<input type="number" name="employee" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required placeholder="Ex: 20161102">
+		</div>
+		<div class="mb-2">
+			<label for="inputPrivateNumber" class="form-label">Private Number</label>
+			<input type="password" name="number_private" class="form-control" id="inputPrivateNumber"  placeholder="Ex: 2077" required>
+		</div>
+		<div class="message">
+			<% flash.each do |key, value| %>
+				<div class="message__content <%= key %>">
+					<%= value %>
+				</div>
+			<% end %>
+		</div>
+		<div class="check__buttons_container">
+			<button type="submit" id='checkin' class="btn btn-primary check__buttons_container_in">Check In</button>
+			<button type="submit" id='checkoff' class="btn btn-primary check__buttons_container_off">Check Off</button>
+		</div>
+	</form>
+</div>
