@@ -9,10 +9,8 @@ class ChecksController < ApplicationController
   def create
     @employee = Employee.find_by(employee_params)
     if @employee != nil
-      puts "parte 1"
-      @check = @employee.checks.new(check_params)
-      puts "parte 2"
-      @check.save ? flash[:notice] = 'Successfully check' : flash[:alert] = 'Checking fail'
+      @check = @employee.checks.new(check_params.merge(:datetime => Time.now.strftime("%H:%M - %F")))
+      @check.save ? flash[:notice] = 'Successfully check' : flash[:alert] = 'Checking faill'
     else
       flash[:alert] = 'Wrong number or password'
     end
@@ -27,6 +25,6 @@ class ChecksController < ApplicationController
   end
 
   def check_params
-    params.permit(:datetime, :check)
+    params.permit(:check)
   end
 end

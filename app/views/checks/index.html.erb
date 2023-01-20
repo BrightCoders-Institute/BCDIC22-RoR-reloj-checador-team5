@@ -10,9 +10,6 @@
     <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
 	<div>
 	<form class="checking__container" action="<%= checks_path %>" method="post">
-		<div>
-			<input type="datetime" value="<%= Time.now.strftime("%H:%M - %F")%>"  name="datetime" disabled hidden>
-		</div>
 		<div class="mb-2">
 			<label for="inputEmployeeNumber" class="form-label">Employee Number</label>
 			<input type="number" name="employee" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required placeholder="Ex: 20161102">
