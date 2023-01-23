@@ -1,6 +1,7 @@
 @import 'utilities/variables';
 
-.content{
+.content {
+
 	background-color: $--primary-color-light;
 	border-radius: 2rem;
 	display: flex;
@@ -10,9 +11,11 @@
 }
 
 .time__container {
+
 	text-align: center;
 	font-family: sans-serif;
-	.h2{
+
+	.h2 {
 		font-size: 7rem;
 	}
 }
@@ -20,26 +23,34 @@
 .check__buttons_container {
 	display: flex;
 	margin-top: 1rem;
-	justify-content: space-between;
+	justify-content: space-around;
+	padding: 0rem 1.5rem 0rem 1.5rem;
+
 	&__in {
 		border: 0;
 		background-color: $--check-in-color;
 		color: $--black-color;
+		border-radius: 0.3rem;
+
 		&:hover {
-			background-color: #b4f5b8;
+			background-color: $--green-check;
 		}
 	}
+
 	&__off {
 		background-color: $--check-off-color;
 		border: 0;
 		color: $--black-color;
+		border-radius: 0.3rem;
+
 		&:hover {
-			background-color: #e58581;
+			background-color: $--red-check;
 		}
 	}
 }
 
 .admin {
+
 	background-color: $--sencondary-color-light;
 	border: 0.2rem;
 	border-radius: 0.5rem;
@@ -47,6 +58,7 @@
 }
 
 .message {
+
 	&__content {
 		background-color: $--white-color;
 		border-radius: 3rem;
@@ -58,6 +70,7 @@
 	.alert {
 		color: $--check-off-color,
 	}
+
 	.notice {
 		color: $--check-in-color;
 	}

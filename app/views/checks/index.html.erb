@@ -9,25 +9,52 @@
 		<h5 class="h5"><%= Time.now.strftime("%F")%></h5>
     <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
 	<div>
-	<form class="checking__container" action="<%= checks_path %>" method="post">
-		<div class="mb-2">
+
+	<div class="checking__container">
+		<%= form_with url: checks_path, method: :post do |form| %>
+			<div class="mb-2">
+				<div>
+					<%= form.label :employee %>
+				</div>
+				<%= form.number_field :employee, placeholder:"e.g 20161102" %>
+			</div>
+
+			<div class="mb-2">
+				<div>
+					<%= form.label :number_private %>
+				</div>
+				<%= form.password_field :number_private, placeholder:"Ex: 2077" %>
+			</div>
+
+			<div class="message">
+				<% flash.each do |key, value| %>
+					<div class="message__content <%= key %>">
+						<%= value %>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="check__buttons_container">
+				<%= form.button "Check in", name:"check", value:"in", class: "check__buttons_container__in" %>
+
+				<%= form.button "Check off", name:"check", value:"off",  class: "check__buttons_container__off" %>
+			</div>
+		<% end %>
+	</div>
+
+	<!-- <form  action="<%= checks_path %>" method="post">
+		<div >
 			<label for="inputEmployeeNumber" class="form-label">Employee Number</label>
-			<input type="number" name="employee" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required placeholder="Ex: 20161102">
+			<input type="number" name="employee" class="form-control" id="inputEmployeeNumber" aria-describedby="employeeHelp" required =>
 		</div>
 		<div class="mb-2">
 			<label for="inputPrivateNumber" class="form-label">Private Number</label>
-			<input type="password" name="number_private" class="form-control" id="inputPrivateNumber"  placeholder="Ex: 2077" required>
+			<input type="password" name="number_private" class="form-control" id="inputPrivateNumber"  placeholder= required>
 		</div>
-		<div class="message">
-			<% flash.each do |key, value| %>
-				<div class="message__content <%= key %>">
-					<%= value %>
-				</div>
-			<% end %>
-		</div>
+
 		<div class="check__buttons_container">
 			<button type="submit" name="check" value="in" id='checkin' class="btn btn-primary check__buttons_container__in">Check In</button>
 			<button type="submit" name="check" value="off" id='checkoff' class="btn btn-primary check__buttons_container__off">Check Off</button>
 		</div>
-	</form>
+	</form> -->
 </div>

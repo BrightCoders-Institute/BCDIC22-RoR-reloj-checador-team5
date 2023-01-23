@@ -8,8 +8,8 @@ class ChecksController < ApplicationController
 
   def create
     @employee = Employee.find_by(employee_params)
-    if @employee != nil
-      @check = @employee.checks.new(check_params.merge(:datetime => Time.now.strftime("%H:%M - %F")))
+    unless @employee.nil?
+      @check = @employee.checks.new(check_params.merge(:datetime => Time.now.strftime('%H:%M - %F')))
       @check.save ? flash[:notice] = 'Successfully check' : flash[:alert] = 'Checking faill'
     else
       flash[:alert] = 'Wrong number or password'
