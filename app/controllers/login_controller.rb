@@ -1,6 +1,6 @@
 class LoginController < ApplicationController
-  def index	
-  end
+	def index	
+	end
 
 	def create
 		admin_params.each do |key, value|
