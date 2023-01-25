@@ -1,0 +1,48 @@
+@import '../utilities/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  /* background-color: gray; */
+  background-image: url("04.png");
+  background-size: contain;
+  box-shadow: $--box-shadow;
+  overflow: hidden;
+}
+
+.contenido {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $--primary-color-light-hover;
+  opacity: 0;
+  transition: .5s;
+}
+
+.contenido h2, a {
+  color: rgba(255, 255, 255, .8);
+  margin: 10px 0;
+}
+
+.card:hover .contenido {
+  opacity: 1;
+}
