@@ -17,15 +17,3 @@
 	padding: 3rem;
 	text-align: center;
 }
-
-.back {
-	align-items: center;
-	background: url("/assets/back.svg") left center no-repeat;
-	background-color: $--red-check;
-	border-radius: 0.5rem;
-	border: 0.2rem;
-	display: flex;
-	padding: .5rem .5rem .5rem 2rem;
-	flex-direction: row;
-	margin: 1rem;
-}
