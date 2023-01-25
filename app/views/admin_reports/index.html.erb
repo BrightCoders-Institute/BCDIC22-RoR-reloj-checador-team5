@@ -1,0 +1,24 @@
+<div class='main__container'>
+  <div>
+    <h1 class='title'>Reports</h1>
+  </div>
+  <div class='dropdown'>
+    <button class='dropdown__button'>Select the company you want</button>
+    <div class='dropdown__content'>
+      <dl>
+        <dt class='dropdown__item'>Lorem ipsum</dt>
+        <dt class='dropdown__item'>Lorem ipsum</dt>
+        <dt class='dropdown__item'>Lorem ipsum</dt>
+      </dl>
+    </div>
+  </div>
+
+  <div class='reports'>
+    <button title='Attendance by day for employees'>Attendance</button>
+    <button title='Average time employees checked in/out by month'>Average</button>
+    <button title='Absence report by month'>Absence</button>
+  </div>
+  <div class='chart__container'>
+    <%= line_chart [["2021-01-01", -2], ["2021-01-02", 3], ["2021-01-03", 1], ["2021-01-04", 10]] %>
+  </div>
+</div>

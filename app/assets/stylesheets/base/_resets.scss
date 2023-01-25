@@ -1,0 +1,13 @@
+/* Aqui van los valores predeterminados que deseamos */
+/* Por ejemplo yo quiero el boton tenga estos estilos predeterminados en toda la app
+asi cuando ponga un <button> directamente ya tendra un estilo base y ahorraremos tiempo
+poniendo estilo y clases :) */
+@import 'utilities/variables';
+button {
+  border: none;
+  text-shadow: 0.5px 1px 1px $--shadow-text-color;
+
+  &:hover {
+    background-color: lightgrey;
+  }
+}
