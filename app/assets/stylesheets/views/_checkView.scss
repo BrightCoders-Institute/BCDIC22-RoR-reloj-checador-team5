@@ -1,9 +1,15 @@
+@import 'utilities/variables';
+
+.container {
+	&__check {
+		flex-direction: column;
+	}
+}
 .content {
 	background-color: $--primary-color-light;
 	border-radius: 2rem;
 	display: flex;
 	justify-content: center;
-	margin: 3rem 25rem;
 	padding: 3rem;
 }
 
@@ -46,10 +52,12 @@
 }
 
 .admin {
+	align-self: initial;
 	background-color: $--sencondary-color-light;
-	border: 0.2rem;
 	border-radius: 0.5rem;
-	margin: 2rem 0 0 2rem;
+	border: 0.2rem;
+	justify-self: left;
+	margin:1rem;
 }
 
 .message {

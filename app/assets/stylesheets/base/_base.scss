@@ -1,5 +1,21 @@
+@import 'utilities/variables';
 
 body {
 	background-color: $--primary-color-dark;
-  	font-size: 18px;
+  font-size: 18px;
 }
+
+.container{
+  align-items: center;
+	display: flex;
+  justify-content: center;
+}
+
+.button {
+	border-radius: 0.3rem;
+	border: 0;
+	margin-top: 1rem;
+	padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+
