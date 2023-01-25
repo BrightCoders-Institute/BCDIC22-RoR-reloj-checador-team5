@@ -13,3 +13,4 @@ class LoginController < ApplicationController
       params.permit(:password)
     end
 end
+
