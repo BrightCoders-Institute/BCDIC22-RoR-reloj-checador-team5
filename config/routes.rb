@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'admin_reports/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'checks#index'
+
+  resources :login, only: [:index, :create]
+  
+  resources :admin, only: [:index]
 
   resources :employees
   resources :checks
@@ -9,3 +12,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
