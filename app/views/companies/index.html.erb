@@ -1,6 +1,6 @@
 <div class="companies__content">
   <h1>Companies</h1>
-
+  <a href="<%= new_company_path %>">Registrar empresa</a>
   <%= @companies.each do |company| %>
     <div class= "company__content">
       <div class="name__company">
@@ -9,6 +9,11 @@
       <div class="addres__company">
         <h2>Address: <%= company.address %> </h2>
       </div>
+      <div>
+        <%= link_to 'EDIT', edit_company_path(company) %>
+        <%= button_to 'DELITE', company_path(company), method: :delete %>
+      </div>
     </div>
+    
   <% end %>
 </div>
