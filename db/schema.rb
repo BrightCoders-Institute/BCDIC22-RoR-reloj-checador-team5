@@ -11,8 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_19_220942) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "checks", force: :cascade do |t|
-    t.integer "employee_id"
+    t.bigint "employee_id"
     t.datetime "datetime"
     t.string "check"
     t.datetime "created_at", null: false
