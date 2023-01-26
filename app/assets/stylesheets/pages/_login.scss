@@ -1,0 +1,18 @@
+.container {
+  &__login{
+    flex-direction: column;
+  }
+}
+
+.login__content {
+  background: url("/assets/admin.svg") center top no-repeat;
+  background-color: $--primary-color-light;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 3rem;
+  text-align: center;
+}
+

@@ -1,44 +1,46 @@
-<a href="<%= new_employee_path %>">
-	<button class="admin">ADMIN
+<a href="<%= login_index_path %>">
+  <button class="admin">ADMIN
     <%= image_tag("/assets/admin.svg", alt: "Logo", width: "40", height: "40", class:"d-inline-block align-text-top") %>
-	</button>
+  </button>
 </a>
 
-<div class="content">
-	<div class="time__container">
-		<h5 class="h5"><%= Time.now.strftime("%F")%></h5>
-    <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
-	<div>
+<div class="container container__check">
+  <div class="content">
+    <div class="time__container">
+      <h5 class="h5"><%= Time.now.strftime("%F")%></h5>
+      <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
+    <div>
 
-	<div class="checking__container">
-		<%= form_with url: checks_path, method: :post do |form| %>
-			<div class="mb-2">
-				<div>
-					<%= form.label :employee %>
-				</div>
-				<%= form.number_field :employee, placeholder:"e.g 20161102" %>
-			</div>
+    <div class="checking__container">
+      <%= form_with url: checks_path, method: :post do |form| %>
+        <div class="mb-2">
+          <div>
+            <%= form.label :employee %>
+          </div>
+          <%= form.number_field :employee, placeholder:"e.g 20161102" %>
+        </div>
 
-			<div class="mb-2">
-				<div>
-					<%= form.label :number_private %>
-				</div>
-				<%= form.password_field :number_private, placeholder:"Ex: 2077" %>
-			</div>
+        <div class="mb-2">
+          <div>
+            <%= form.label :number_private %>
+          </div>
+          <%= form.password_field :number_private, placeholder:"Ex: 2077" %>
+        </div>
 
-			<div class="message">
-				<% flash.each do |key, value| %>
-					<div class="message__content <%= key %>">
-						<%= value %>
-					</div>
-				<% end %>
-			</div>
+        <div class="message">
+          <% flash.each do |key, value| %>
+            <div class="message__content <%= key %>">
+              <%= value %>
+            </div>
+          <% end %>
+        </div>
 
-			<div class="check__buttons_container">
-				<%= form.button "Check in", name:"check", value:"in", class: "check__buttons_container__in" %>
-
-				<%= form.button "Check off", name:"check", value:"off",  class: "check__buttons_container__off" %>
-			</div>
-		<% end %>
-	</div>
+        <div class="check__buttons_container">
+          <%= form.button "Check in", name:"check", value:"in", class: "check__buttons_container__in" %>
+          <%= form.button "Check off", name:"check", value:"off",  class: "check__buttons_container__off" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
