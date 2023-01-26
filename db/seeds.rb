@@ -21,3 +21,13 @@ require 'faker'
   )
 end
 
+5.times do |j|
+  10.times do |i|
+    value = Faker::Boolean.boolean(true_ratio: 0.6)
+    Check.create(
+      employee_id: i,
+      datetime: Faker::Date.between(from: 2.month.ago, to: Date.today),
+      check: value == true ? 'in' : 'off',
+    )
+  end
+end
