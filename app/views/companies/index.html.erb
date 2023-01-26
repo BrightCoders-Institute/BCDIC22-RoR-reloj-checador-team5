@@ -1,0 +1,14 @@
+<div class="companies__content">
+  <h1>Companies</h1>
+
+  <%= @companies.each do |company| %>
+    <div class= "company__content">
+      <div class="name__company">
+        <h2>Name: <%= company.name %> </h2>
+      </div>
+      <div class="addres__company">
+        <h2>Address: <%= company.address %> </h2>
+      </div>
+    </div>
+  <% end %>
+</div>
