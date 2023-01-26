@@ -27,8 +27,8 @@ class AdminReportsController < ApplicationController
   end
 
   def absence
-    count = Check.group_by_month(:datetime).where(check: 'off').count
-    count
+    employee = Employee.all
+    Check.select(:employee_id).find_by(:datetime == '26/01/2023')
   end
 
   def average
