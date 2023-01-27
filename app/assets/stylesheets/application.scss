@@ -1,3 +1,19 @@
+/* Utilities */
+@import 'utilities/mixins';
+@import 'utilities/functions';
+@import 'utilities/variables';
+
+/* Layout */
+@import 'layout/containers';
+@import 'layout/body';
+
+/* Components */
+@import 'components/buttons';
+
+/* Views */
+@import 'pages/check';
+@import 'pages/login';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,9 +32,11 @@
  */
 
  /* bootstrap */
+
 @import 'rails_bootstrap_forms';
 @import 'bootstrap';
 
+<<<<<<< HEAD:app/assets/stylesheets/main.scss
 /* Views */
 @import 'views/checkView';
 @import 'views/adminView';
@@ -31,3 +49,5 @@
 
 /* base */
 @import 'base/base'
+=======
+>>>>>>> master:app/assets/stylesheets/application.scss
