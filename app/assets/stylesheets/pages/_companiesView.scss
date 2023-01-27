@@ -41,14 +41,22 @@
     font-style: oblique;
   }
 
-  &__body {
-    background-color: $--primary-color-light;
-    border-radius: 2rem;
-    text-align: center;
+  &__container {
     display: flex;
     justify-content: center;
-    margin: 3rem 40rem;
+    align-items: center;
+  }
+
+  &__body {
+    margin-top: 8rem;
+    background-color: $--primary-color-light;
+    border-radius: 2rem;
+    width: fit-content;
     padding: 3rem;
+  }
+
+  &__form {
+    display: flex;
   }
 
   &__buttons {
@@ -107,5 +115,22 @@
       box-shadow: none;
     }
   
+  }
+}
+
+.form {
+
+  &__submit {
+    text-decoration: none;
+    background-color: $--green-check;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  &__cancel {
+    background-color: $--red-check;
+    border: none;
+    border-radius: 5px;
+    padding: 5px; 
   }
 }
