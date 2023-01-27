@@ -1,7 +1,11 @@
+<a href="<%= admin_index_path %>" class="a">
+  <button class="back">Back</button>
+</a>
+
 <div class="companies__content">
   <h1 class='companies__title' >Company Maganer</h1>
   <a href="<%= new_company_path %>" class='btn__newcompany' >Add new company</a>
-  <%= @companies.each do |company| %>
+  <% @companies.each do |company| %>
 
     <div class= "company__content">
       <div class='company__info'>
@@ -20,3 +24,4 @@
     
   <% end %>
 </div>
+
