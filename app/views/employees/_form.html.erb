@@ -8,6 +8,14 @@
 		<% end %>
 
 		<div>
+			<select name="name">
+				<% @companies.each do | company | %>
+					<option value="<% company %>"><% company %></option>
+				<% end %>
+			</select>
+		</div>
+
+		<div>
 			<%= form.text_field :email %>
 		</div>
 
