@@ -1,0 +1,30 @@
+<a href="<%= admin_index_path %>" class="a">
+  <button class="back">Back</button>
+</a>
+
+<div class="employees__content">
+  <h1 class='employees__title' >Employee Maganer</h1>
+  <a href="<%= new_employee_path %>" class='btn__newemployee' >Add new employee</a>
+  <% @employees.each do | employee | %>
+
+    <div class= "employee__content">
+      <div class='employee__info'>
+        <div class="employee__name">
+          <%= employee.name %>
+        </div>
+
+        <div class="employee__text">
+          <%= employee.position %>
+          <%= employee.employee %>
+          <%= employee.email %>
+        </div>
+      </div>
+
+      <div class='btn__container' >
+        <%= link_to 'Edit', edit_employee_path(employee), class: 'btn__edit' %>
+        <%= button_to 'Delete', employee_path(employee), method: :delete, class: 'btn__delete' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
