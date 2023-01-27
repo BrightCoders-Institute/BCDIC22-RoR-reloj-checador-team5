@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :employees
   resources :checks
   resources :admin_reports, only: [:index]
+  resources :companies
+  resources :admin, only: [:index]
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

@@ -1,0 +1,26 @@
+<div class='company__container' >
+	<div class="company__body">
+		<div class="company__form">
+			<%=  form_for @company do  |form| %>
+				<% @company.errors.full_messages.each do |error| %>
+					<div>
+						<%= error %>
+					</div>
+				<% end %>
+				<div class="company__controls">
+				<div>Nombre</div>
+					<%= form.text_field :name %>
+				</div>
+
+				<div class="company__controls">
+				<div>Address</div>
+					<%= form.text_field :address %>
+				</div>
+				<div class= "company__buttons">
+					<%= form.submit %>
+					<a href="<%= companies_path %>"> <button class='form__cancel' >Cancel</button></a>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
