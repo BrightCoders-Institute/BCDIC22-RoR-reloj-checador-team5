@@ -4,12 +4,13 @@ class AdminReportsController < ApplicationController
   helper_method :average
   def index
     @checks= Check.all
+
+    absence
   end
 
   def show
     attendace
-
-    absence
+    average
   end
 
   private
@@ -34,8 +35,12 @@ class AdminReportsController < ApplicationController
   end
 
   def absence
-    sql = "Select * from employees"
+    sql = "select * from employees"
     records_array = ActiveRecord::Base.connection.execute(sql)
+    # records_array.each do | aver |
+    #   puts records_array
+    # end
+
     puts records_array
   end
 end
