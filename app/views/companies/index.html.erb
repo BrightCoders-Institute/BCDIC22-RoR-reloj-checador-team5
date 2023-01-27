@@ -1,17 +1,20 @@
 <div class="companies__content">
-  <h1>Companies</h1>
-  <a href="<%= new_company_path %>">Registrar empresa</a>
+  <h1 class='companies__title' >Company Maganer</h1>
+  <a href="<%= new_company_path %>" class='btn__newcompany' >Add new company</a>
   <%= @companies.each do |company| %>
+
     <div class= "company__content">
-      <div class="name__company">
-        <h2>Name: <%= company.name %> </h2>
+      <div class='company__info'>
+        <div class="company__name">
+          <%= company.name %>
+        </div>
+        <div class="company__address">
+          <%= company.address %>
+        </div>
       </div>
-      <div class="addres__company">
-        <h2>Address: <%= company.address %> </h2>
-      </div>
-      <div>
-        <%= link_to 'EDIT', edit_company_path(company) %>
-        <%= button_to 'DELITE', company_path(company), method: :delete %>
+      <div class='btn__container' >
+        <%= link_to 'Edit', edit_company_path(company), class: 'btn__edit' %>
+        <%= button_to 'Delete', company_path(company), method: :delete, class: 'btn__delete' %>
       </div>
     </div>
     

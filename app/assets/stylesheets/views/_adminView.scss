@@ -20,8 +20,20 @@
   height: 300px;
   border-radius: 5px;
   /* background-color: gray; */
-  background-image: url("04.png");
-  background-size: contain;
+  background-image: url("employeesvg.svg");
+  background-size: 100% 100%;
+  box-shadow: $--box-shadow;
+  overflow: hidden;
+}
+
+.card2 {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  background-color: white;
+  background-image: url("companiesvg.svg");
+  background-size: 100% 100%;
   box-shadow: $--box-shadow;
   overflow: hidden;
 }
@@ -39,10 +51,14 @@
 }
 
 .contenido h2, a {
-  color: rgba(255, 255, 255, .8);
+  color: $--background-hover;
   margin: 10px 0;
 }
 
 .card:hover .contenido {
+  opacity: 1;
+}
+
+.card2:hover .contenido {
   opacity: 1;
 }

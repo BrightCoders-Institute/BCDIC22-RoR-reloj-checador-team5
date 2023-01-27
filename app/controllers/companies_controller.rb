@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+
   def index
     @companies = Company.all
   end
@@ -9,7 +10,6 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    
     if @company.save
       redirect_to companies_path
     else
@@ -35,10 +35,12 @@ class CompaniesController < ApplicationController
   end
 
   private
-    def company_params
-      params.require(:company).permit(:name, :address)
-    end
-    def company
-      @company = Company.find(params[:id])
-    end
+
+  def company_params
+    params.require(:company).permit(:name, :address)
+  end
+
+  def company
+    @company = Company.find(params[:id])
+  end
 end
