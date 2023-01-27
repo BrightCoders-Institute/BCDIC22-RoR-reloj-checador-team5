@@ -8,6 +8,8 @@ class AdminReportsController < ApplicationController
 
   def show
     attendace
+
+    absence
   end
 
   private
@@ -26,14 +28,15 @@ class AdminReportsController < ApplicationController
     count
   end
 
-  def absence
-    employee = Employee.all
-    Check.select(:employee_id).find_by(:datetime == '26/01/2023')
-  end
-
   def average
     count = Check.group_by_month(:datetime).average(:employee_id)
     count
+  end
+
+  def absence
+    sql = "Select * from employees"
+    records_array = ActiveRecord::Base.connection.execute(sql)
+    puts records_array
   end
 end
 
