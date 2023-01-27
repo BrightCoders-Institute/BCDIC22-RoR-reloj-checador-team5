@@ -1,0 +1,22 @@
+<div class="companies__content">
+  <h1 class='companies__title' >Company Maganer</h1>
+  <a href="<%= new_company_path %>" class='btn__newcompany' >Add new company</a>
+  <%= @companies.each do |company| %>
+
+    <div class= "company__content">
+      <div class='company__info'>
+        <div class="company__name">
+          <%= company.name %>
+        </div>
+        <div class="company__address">
+          <%= company.address %>
+        </div>
+      </div>
+      <div class='btn__container' >
+        <%= link_to 'Edit', edit_company_path(company), class: 'btn__edit' %>
+        <%= button_to 'Delete', company_path(company), method: :delete, class: 'btn__delete' %>
+      </div>
+    </div>
+    
+  <% end %>
+</div>
