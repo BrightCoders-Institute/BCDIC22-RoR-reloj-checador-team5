@@ -23,11 +23,18 @@ end
 
 5.times do |j|
   10.times do |i|
-    value = Faker::Boolean.boolean(true_ratio: 0.6)
+    value = Faker::Boolean.boolean(true_ratio: 0.5)
     Check.create(
       employee_id: i,
       datetime: Faker::Date.between(from: 1.month.ago, to: Date.today),
       check: value == true ? 'in' : 'off',
     )
   end
+end
+
+10.times do |i|
+  Company.create(
+    name: Faker::Company.name,
+    address: Faker::Address.full_address,
+  )
 end

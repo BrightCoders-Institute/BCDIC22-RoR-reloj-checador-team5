@@ -2,18 +2,30 @@ class AdminReportsController < ApplicationController
   helper_method :show
   helper_method :attendace
   helper_method :average
+  helper_method :absence
+  helper_method :options
   def index
     @checks= Check.all
+    @companies= Company.all
 
     absence
   end
-
+  
   def show
     attendace
     average
   end
-
+  
   private
+  
+  def options
+    sql = 'select name from companies order by name'
+    records_array = ActiveRecord::Base.connection.execute(sql)
+    records_array.each do | name |
+      name
+    end
+
+  end
 
   def employee_params
     params.permit(:employee, :number_private)
@@ -35,13 +47,15 @@ class AdminReportsController < ApplicationController
   end
 
   def absence
-    sql = "select * from employees"
+    sql = "select employee_id, TO_CHAR(DATE(datetime), 'Month') as mes, datetime from checks
+            where checks.check = 'in' and EXTRACT(MONTH FROM datetime) = 12
+            group by employee_id, datetime"
     records_array = ActiveRecord::Base.connection.execute(sql)
-    # records_array.each do | aver |
-    #   puts records_array
-    # end
 
-    puts records_array
+    records_array.each do | date |
+      date
+    end
   end
+
 end
 
