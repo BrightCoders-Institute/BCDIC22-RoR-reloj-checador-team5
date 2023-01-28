@@ -4,7 +4,7 @@
     <h1 class='title'>Reports</h1>
   </div>
   <div class='select'>
-    <a href="<%= admin_index_path %>"> <%= button_to 'back' %> </a>
+    <a href="<%= admin_index_path %>" class='btn__back' > <%= button_to 'back' %> </a>
     <label>Choose a company</label>
     <select>
       <% @companies.each do |company| %>
@@ -28,7 +28,7 @@
       <%= line_chart average, title: 'Average time employees checked in/out by month' %>
     </div>
     <div class='chart__container'id='div-absence'>
-      <%= absence %>
+      <%= line_chart absence, title: 'Absence report by month' %>
     </div>
   <div>
 

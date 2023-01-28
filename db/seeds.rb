@@ -13,7 +13,7 @@ require 'faker'
   employee_number = Faker::Number.unique.number(digits: 3)
   Employee.create!(
     employee: employee_number,
-    email: "#{Faker::Ancient.god}@gmail.com",
+    email: "#{Faker::Ancient.unique.god}@gmail.com",
     name: Faker::Name.unique.name,
     position: Faker::Job.position,
     number_private: Faker::Number.number(digits: 3),
@@ -23,18 +23,23 @@ end
 
 5.times do |j|
   10.times do |i|
-    value = Faker::Boolean.boolean(true_ratio: 0.5)
+    date = Faker::Date.between(from: 2.month.ago, to: Date.today)
     Check.create(
       employee_id: i,
-      datetime: Faker::Date.between(from: 4.month.ago, to: Date.today),
-      check: value == true ? 'in' : 'off',
+      datetime: date,
+      check: 'in',
+    )
+    Check.create(
+      employee_id: i,
+      datetime: date,
+      check: 'off',
     )
   end
 end
 
 10.times do |i|
   Company.create(
-    name: Faker::Company.name,
+    name: Faker::Company.unique.name,
     address: Faker::Address.full_address,
   )
 end

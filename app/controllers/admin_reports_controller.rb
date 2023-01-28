@@ -6,6 +6,7 @@ class AdminReportsController < ApplicationController
   def index
     @checks = Check.all
     @companies = Company.all
+    @employee = Employee.all
   end
 
   private
@@ -38,7 +39,18 @@ class AdminReportsController < ApplicationController
   def absence
     # sql = "select employee_id, datetime from checks where checks.check = 'in' group by employee_id, datetime"
     # records_array = ActiveRecord::Base.connection.execute(sql)
-    hm = Check.select(:datetime).where(check: 'in', check: 'off').count
+    hash = Check.group_by_day(:datetime).where(check: 'in').count
+
+    result = {}
+    final_hash = {}
+    hash.each do | key, value |
+      absence = 0
+      numEmployees = @employee.size
+      absence = numEmployees - value
+      result[key] = absence
+    end
+    
+    result
   end
 
 end
