@@ -9,13 +9,14 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    @companies = Company.all
   end
 
   def create
-    @companies = Company.select(:name)
     @company = Company.find_by(company_params)
+    puts @company.id
     @employee = @company.employees.new(employee_params)
-
+    puts "sussesfull"
     if @employee.save
       redirect_to employees_path
     else
@@ -42,7 +43,7 @@ class EmployeesController < ApplicationController
 
   private
     def employee_params
-      params.require(:employee).permit(:email, :name, :position, :employee, :number_private)
+      params.require(:employee).permit(:email, :name, :position, :employee, :number_private) 
     end
 
     def employee

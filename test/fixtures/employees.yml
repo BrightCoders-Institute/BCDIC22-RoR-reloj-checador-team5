@@ -1,19 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  employee: 1
-  email: chaidowan@gmail.com
-  name: ElChido
-  position: ElAlbañil
-  number_private: 1
-  is_employee: true
+  company: one
 
 two:
-  employee: 2
-  email: senoritarodolfo@gmail.com
-  name: rodolfe
-  position: elmaistro
-  number_private: 22
-  is_employee: false
-
-# rails db:fixtures:load
+  company: two

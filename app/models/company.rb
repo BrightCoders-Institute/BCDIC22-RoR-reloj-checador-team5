@@ -1,3 +1,3 @@
 class Company < ApplicationRecord
-	has_many :employees, foreign_key:"employee_id"
+  has_many :employees
 end
