@@ -81,10 +81,16 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+#production:
+#  <<: *default
+#  database: Timeclock_production
+#  username: Timeclock
+#  password: <%= ENV["TIMECLOCK_DATABASE_PASSWORD"] %>
+
+  production:
 		  <<: *default
-		  url: <%= ENV["DATABASE_URL"] %>
-		  database: railwayapp_production
-		  username: railwayapp
-		  password: <%= ENV["RAILWAYAPP_DATABASE_PASSWORD"] %>
+		  url: <%= ENV["postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}"] %>
+		  database: railway
+		  username: postgres
+		  password: <%= ENV["DJGAVcECZSK1lWEShAqK"] %>
 
