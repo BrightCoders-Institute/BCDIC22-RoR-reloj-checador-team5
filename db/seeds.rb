@@ -26,7 +26,7 @@ end
     value = Faker::Boolean.boolean(true_ratio: 0.5)
     Check.create(
       employee_id: i,
-      datetime: Faker::Date.between(from: 1.month.ago, to: Date.today),
+      datetime: Faker::Date.between(from: 4.month.ago, to: Date.today),
       check: value == true ? 'in' : 'off',
     )
   end

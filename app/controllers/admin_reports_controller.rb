@@ -1,23 +1,15 @@
 class AdminReportsController < ApplicationController
-  helper_method :show
   helper_method :attendace
   helper_method :average
   helper_method :absence
   helper_method :options
   def index
-    @checks= Check.all
-    @companies= Company.all
+    @checks = Check.all
+    @companies = Company.all
+  end
 
-    absence
-  end
-  
-  def show
-    attendace
-    average
-  end
-  
   private
-  
+
   def options
     sql = 'select name from companies order by name'
     records_array = ActiveRecord::Base.connection.execute(sql)
@@ -36,25 +28,17 @@ class AdminReportsController < ApplicationController
   end
 
   def attendace
-    count = Check.group_by_day(:datetime).where(check: 'in').count
-    "#{Check.group_by_day(:datetime).where(check: 'in').count}"
-    count
+    Check.group_by_day(:datetime).where(check: 'in').count
   end
 
   def average
-    count = Check.group_by_month(:datetime).average(:employee_id)
-    count
+    Check.group_by_month(:datetime).average(:employee_id)
   end
 
   def absence
-    sql = "select employee_id, TO_CHAR(DATE(datetime), 'Month') as mes, datetime from checks
-            where checks.check = 'in' and EXTRACT(MONTH FROM datetime) = 12
-            group by employee_id, datetime"
-    records_array = ActiveRecord::Base.connection.execute(sql)
-
-    records_array.each do | date |
-      date
-    end
+    # sql = "select employee_id, datetime from checks where checks.check = 'in' group by employee_id, datetime"
+    # records_array = ActiveRecord::Base.connection.execute(sql)
+    hm = Check.select(:datetime).where(check: 'in', check: 'off').count
   end
 
 end

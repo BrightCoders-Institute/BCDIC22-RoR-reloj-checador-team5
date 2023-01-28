@@ -4,6 +4,7 @@
     <h1 class='title'>Reports</h1>
   </div>
   <div class='select'>
+    <a href="<%= admin_index_path %>"> <%= button_to 'back' %> </a>
     <label>Choose a company</label>
     <select>
       <% @companies.each do |company| %>
@@ -21,10 +22,10 @@
 
   <div class='chart__main__container' >
     <div class='chart__container' id='div-attendance'>
-      <%= line_chart attendace %>
+      <%= line_chart attendace, title: "Attendance by day for employees" %>
     </div>
     <div class='chart__container' id='div-average'>
-      <%= line_chart average %>
+      <%= line_chart average, title: 'Average time employees checked in/out by month' %>
     </div>
     <div class='chart__container'id='div-absence'>
       <%= absence %>
