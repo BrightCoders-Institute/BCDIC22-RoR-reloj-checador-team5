@@ -1,41 +1,34 @@
-@import '../utilities/variables';
-
 .main {
 
   &__container {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    align-items: center;
-    padding: 2rem;
+    padding: .5rem;
+
+    .title {
+      color: $--white-color;
+    }
   }
-}
-
-.title {
-  color: $--white-color;
-}
-
-.select {
-  position: absolute;
 }
 
 .chart {
 
-  &__main__container {
-    background-color: $background-color;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border-radius: 10px;
-    box-shadow: $box-shadow-inset
-  }
-
   &__container {
     background-color: $background-color;
-    display: flex;
+    border-radius: 10px;
+    box-shadow: $box-shadow-inset;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  &__content {
     align-items: center;
+    background-color: $background-color;
+    display: flex;
     margin: 2rem;
-    width: 90rem;
-    height: 30rem;
+    // width: 90rem;
+    // height: 30rem;
   }
 }
 

@@ -1,9 +1,9 @@
 const reloj = document.querySelector('.clock')
 function time() {
 	const date = new Date()
-	let hours = date.getUTCHours();
-	let minutes = date.getUTCMinutes();
-	let seconds = date.getUTCSeconds();
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
+	let seconds = date.getSeconds();
   reloj.innerHTML = `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
 }
 setInterval(time,1000);

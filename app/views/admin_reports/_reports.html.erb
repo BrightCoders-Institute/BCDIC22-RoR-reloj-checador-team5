@@ -1,0 +1,13 @@
+<div class='chart__container' >
+  <div class='chart__content' id='div-attendance'>
+    <%= line_chart attendance, title: "Attendance by day for employees" %>
+  </div>
+
+  <div class='chart__content' id='div-average'>
+    <%= line_chart average, title: 'Average time employees checked in/out by month' %>
+  </div>
+
+  <div class='chart__content'id='div-absence'>
+    <%= line_chart absence, title: 'Absence report by month' %>
+  </div>
+<div>
