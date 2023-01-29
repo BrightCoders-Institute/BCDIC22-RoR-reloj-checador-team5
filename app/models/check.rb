@@ -1,3 +1,3 @@
 class Check < ApplicationRecord
-	belongs_to :employee, foreign_key: "employee_id"
+  belongs_to :employee
 end

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_222144) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_28_041011) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.bigint "employee_id"
+    t.bigint "employee_id", null: false
     t.datetime "datetime"
     t.string "check"
     t.datetime "created_at", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_222144) do
   end
 
   create_table "employees", force: :cascade do |t|
+    t.bigint "company_id", null: false
     t.integer "employee"
     t.string "email"
     t.string "name"
@@ -39,7 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_222144) do
     t.boolean "is_employee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
   add_foreign_key "checks", "employees"
+  add_foreign_key "employees", "companies"
 end
