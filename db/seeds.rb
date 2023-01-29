@@ -8,10 +8,25 @@
 
 require 'faker'
 # seed para crear empleados para las graficas
-10.times do |i|
+
+company_quantity = 5
+employee_quantity = 10
+checks_quantity = employee_quantity
+checks_per_employee = 5
+
+
+company_quantity.times do |i|
+  Company.create(
+    name: Faker::Company.unique.name,
+    address: Faker::Address.full_address,
+  )
+end
+
+employee_quantity.times do |i|
 
   employee_number = Faker::Number.unique.number(digits: 3)
   Employee.create!(
+    # company_id: rand(1..company_quantity),
     employee: employee_number,
     email: "#{Faker::Ancient.unique.god}@gmail.com",
     name: Faker::Name.unique.name,
@@ -21,8 +36,8 @@ require 'faker'
   )
 end
 
-5.times do |j|
-  10.times do |i|
+checks_per_employee.times do |j|
+  checks_quantity.times do |i|
     date = Faker::Date.between(from: 2.month.ago, to: Date.today)
     Check.create(
       employee_id: i,
@@ -37,9 +52,3 @@ end
   end
 end
 
-10.times do |i|
-  Company.create(
-    name: Faker::Company.unique.name,
-    address: Faker::Address.full_address,
-  )
-end

@@ -29,17 +29,18 @@ class AdminReportsController < ApplicationController
   end
 
   def attendace
-    Check.group_by_day(:datetime).where(check: 'in').count
+     @checks.group_by_day(:datetime).where(check: 'in').count
+
   end
 
   def average
-    Check.group_by_month(:datetime).average(:employee_id)
+    @checks.group_by_month(:datetime).average(:employee_id)
   end
 
   def absence
     # sql = "select employee_id, datetime from checks where checks.check = 'in' group by employee_id, datetime"
     # records_array = ActiveRecord::Base.connection.execute(sql)
-    hash = Check.group_by_day(:datetime).where(check: 'in').count
+    hash = @checks.group_by_day(:datetime).where(check: 'in').count
 
     result = {}
     final_hash = {}
@@ -49,7 +50,6 @@ class AdminReportsController < ApplicationController
       absence = numEmployees - value
       result[key] = absence
     end
-    
     result
   end
 
