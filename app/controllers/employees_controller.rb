@@ -9,7 +9,7 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
-    @companies = Company.all
+    @companies = Company.select(:name, :id)
   end
 
   def create
@@ -25,6 +25,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    
     employee
   end
 
@@ -51,7 +52,7 @@ class EmployeesController < ApplicationController
     end
 
     def company_params
-      params.permit(:name)
+      params.permit(:name, :id)
     end
 
 end
