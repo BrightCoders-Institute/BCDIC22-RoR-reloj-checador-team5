@@ -1,6 +1,6 @@
 <div class='chart__container' >
   <div class='chart__content' id='div-attendance'>
-    <%= line_chart attendance, title: "Attendance by day for employees" %>
+    <%= area_chart attendance, title: "Attendance by day for employees" %>
   </div>
 
   <div class='chart__content' id='div-average'>
@@ -8,6 +8,6 @@
   </div>
 
   <div class='chart__content'id='div-absence'>
-    <%= line_chart absence, title: 'Absence report by month' %>
+    <%= area_chart absence, title: 'Absence report by day' %>
   </div>
 <div>
