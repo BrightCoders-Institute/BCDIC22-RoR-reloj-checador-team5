@@ -14,9 +14,7 @@ class EmployeesController < ApplicationController
 
   def create
     @company = Company.find_by(company_params)
-    puts @company.id
     @employee = @company.employees.new(employee_params)
-    puts "sussesfull"
     if @employee.save
       redirect_to employees_path
     else
@@ -25,7 +23,6 @@ class EmployeesController < ApplicationController
   end
 
   def edit
-    
     employee
   end
 
