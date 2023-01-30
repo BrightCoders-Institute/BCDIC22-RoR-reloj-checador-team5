@@ -9,13 +9,14 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    @companies = Company.select(:name, :id)
   end
 
   def create
-    @employee = Employee.new(employee_params)
-    
+    @company = Company.find_by(company_params)
+    @employee = @company.employees.new(employee_params)
     if @employee.save
-      redirect_to checks_path
+      redirect_to employees_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -40,11 +41,15 @@ class EmployeesController < ApplicationController
 
   private
     def employee_params
-      params.require(:employee).permit(:email, :name, :position, :employee, :number_private)
+      params.require(:employee).permit(:email, :name, :position, :employee, :number_private) 
     end
 
     def employee
       @employee = Employee.find(params[:id])
+    end
+
+    def company_params
+      params.permit(:name, :id)
     end
 
 end
