@@ -1,20 +1,20 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  username: postgres
-  password: DJGAVcECZSK1lWEShAqK
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+adapter: postgresql
+encoding: unicode
+username: postgres
+password: DJGAVcECZSK1lWEShAqK
+pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: Timeclock_development
-  host: containers-us-west-92.railway.app
-  port: 6446
+<<: *default
+database: Timeclock_development
+host: containers-us-west-92.railway.app
+port: 6446
 
-  production:
-		  <<: *default
-		  url: <%= ENV["postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}"] %>
-		  database: railway
-		  username: postgres
-		  password: <%= ENV["DJGAVcECZSK1lWEShAqK"] %>
+production:
+<<: *default
+url: <%= ENV["postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}"] %>
+database: railway
+username: postgres
+password: <%= ENV["DJGAVcECZSK1lWEShAqK"] %>
 
