@@ -14,9 +14,9 @@
       <div class='reports'>
         <% form.hidden_field name:'authenticity_token', value:form_authenticity_token %>
         <%= javascript_include_tag 'admin_reports_charts' %>
-        <%= form.button 'Attendance', title:'Attendance by day for employees', name:'report', value:'attendance', id:'btn-attendance', class:'btn' %>
-        <%= form.button 'Average', title:'Average time employees checked in/out by month', name:'report', value:'average', id:'btn-average', class:'btn' %>
-        <%= form.button 'Absence', title:'Absence report by month', name:'report', value:'absence', id:'btn-absence', class:'btn' %>
+        <%= form.button 'Attendance', id:'btn-attendance', class:'btn' %>
+        <%= form.button 'Average', id:'btn-average', class:'btn' %>
+        <%= form.button 'Absence', id:'btn-absence', class:'btn' %>
       </div>
 
       <label>Choose a company</label>

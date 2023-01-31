@@ -14,7 +14,6 @@ employee_quantity = 10
 checks_quantity = employee_quantity
 checks_per_employee = 5
 
-
 company_quantity.times do |i|
   Company.create(
     name: Faker::Company.unique.name,
@@ -25,10 +24,10 @@ end
 company_quantity.times do |j|
   employee_quantity.times do |i|
     employee_number = Faker::Number.unique.number(digits: 3)
-    Employee.create!(
+    Employee.create(
       company_id: j,
       employee: employee_number,
-      email: "#{Faker::Ancient.unique.god}@gmail.com",
+      email: "#{Faker::Ancient.god}@gmail.com",
       name: Faker::Name.unique.name,
       position: Faker::Job.position,
       number_private: Faker::Number.number(digits: 3),

@@ -9,12 +9,8 @@ class AdminReportsController < ApplicationController
   end
 
   def create
-    report_params.each do | key, report |
-      if report == "attendance"|| report == "average" || report== "absence"
-        @companies = Company.all
-        render :index
-      end 
-    end
+    @companies = Company.all
+    render :index
   end
 
   private
@@ -27,39 +23,39 @@ class AdminReportsController < ApplicationController
     end
   end
 
-  def company_params
-    params.permit(:name)
-  end
-
-  def report_params
-    params.permit(:report, :authenticity_token)
+  def company
+    Company.find_by(name: params[:name])
   end
 
   def attendance
-    @company = Company.find_by(company_params)
-    checks = Check.where(employee_id: @company.employees.ids)
-    checks.group_by_day(:datetime).where(check: 'in').count
+    
+    if company != nil
+      checks = Check.where(employee_id: company.employees.ids)
+      checks.group_by_day(:datetime).where(check: 'in').count
+    end
   end
 
   def average
-    @company = Company.find_by(company_params)
-    checks = Check.where(employee_id: @company.employees.ids)
-    checks.group_by_month(:datetime).average(:employee_id)
+    if company != nil
+      checks = Check.where(employee_id: company.employees.ids)
+      checks.group_by_month(:datetime).average(:employee_id)
+    end
   end
 
   def absence
-    @company = Company.find_by(company_params)
-    hash = Check.group_by_day(:datetime).where(employee_id: @company.employees.ids, check: 'in').count
+    if company != nil
+      hash = Check.group_by_day(:datetime).where(employee_id: company.employees.ids, check: 'in').count
 
-    result = {}
-    final_hash = {}
-    hash.each do | key, value |
-      absence = 0
-      numEmployees = @company.employees.count
-      absence = numEmployees - value
-      result[key] = absence
+      result = {}
+      final_hash = {}
+      hash.each do | key, value |
+        absence = 0
+        numEmployees = @company.employees.count
+        absence = numEmployees - value
+        result[key] = absence
+      end
+      result
     end
-    result
   end
 end
 
