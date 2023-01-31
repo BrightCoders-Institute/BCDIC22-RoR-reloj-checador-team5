@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :employees
   resources :checks
-  resources :admin_reports
+  #resources :admin_reports, only: [:index], via: [:get, :post]
+  match 'admin_reports', to: 'admin_reports#index', via: [:get, :post]
   resources :companies
 
   # Defines the root path route ("/")

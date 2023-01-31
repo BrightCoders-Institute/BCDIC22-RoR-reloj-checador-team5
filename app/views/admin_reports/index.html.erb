@@ -20,11 +20,8 @@
       </div>
 
       <label>Choose a company</label>
-      <select name="name">
-        <%= @companies.each do |company| %>
-          <option value="<%= company.name %>"><%= company.name %></option>
-        <% end %>
-      </select>
+      <%= form.collection_select :company_id, Company.all, :id, :name%>
+
     <% end %>
     
     <%= render 'reports' %>

@@ -8,11 +8,6 @@ class AdminReportsController < ApplicationController
     @companies = Company.all
   end
 
-  def create
-    @companies = Company.all
-    render :index
-  end
-
   private
 
   def options
@@ -24,38 +19,31 @@ class AdminReportsController < ApplicationController
   end
 
   def company
-    Company.find_by(name: params[:name])
+    param = params[:company_id].nil? ? 1 : params[:company_id]
+    Company.find_by(id: param)
   end
 
   def attendance
-    
-    if company != nil
-      checks = Check.where(employee_id: company.employees.ids)
-      checks.group_by_day(:datetime).where(check: 'in').count
-    end
+    checks = Check.where(employee_id: company.employees.ids)
+    checks.group_by_day(:datetime).where(check: 'in').count
   end
 
   def average
-    if company != nil
       checks = Check.where(employee_id: company.employees.ids)
       checks.group_by_month(:datetime).average(:employee_id)
-    end
   end
 
   def absence
-    if company != nil
       hash = Check.group_by_day(:datetime).where(employee_id: company.employees.ids, check: 'in').count
-
       result = {}
       final_hash = {}
       hash.each do | key, value |
         absence = 0
-        numEmployees = @company.employees.count
+        numEmployees = company.employees.count
         absence = numEmployees - value
         result[key] = absence
       end
       result
-    end
   end
 end
 
