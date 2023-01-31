@@ -10,7 +10,7 @@
   </div>
 
   <div class="main__content">
-    <%= form_with url: admin_reports_path, method: :post do | form | %>
+    <%= form_with url: admin_reports_url, method: :get do | form | %>
       <div class='reports'>
         <% form.hidden_field name:'authenticity_token', value:form_authenticity_token %>
         <%= javascript_include_tag 'admin_reports_charts' %>
