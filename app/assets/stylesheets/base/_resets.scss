@@ -1,3 +1,23 @@
 a {
   text-decoration: none !important;
 }
+
+table {
+  border-collapse: collapse;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+th, td {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: $text-color;
+}
+
+tr:hover {
+  opacity: 0.5;
+}

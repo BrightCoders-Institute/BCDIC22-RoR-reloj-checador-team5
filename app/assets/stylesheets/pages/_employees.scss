@@ -1,13 +1,13 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 1px;
-}
 .employees {
 
   &__content {
     margin: 0px auto;
-    width: 1100px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $secondary-color;
+    box-shadow: $box-shadow;
   }
 
   &__title {
@@ -16,116 +16,106 @@
     font-weight: bold;
     text-align: center;
   }
-}
-
-.employee {
-
-  &__content{
-    background-color: $--white-color;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0 1rem 0;
-    padding: 1em;
-  }
-
-  &__name {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  &__text {
-    font-size: 0.9em;
-    font-style: oblique;
-    font-weight: lighter;
-  }
-
-  &__container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__body {
-    background-color: $--primary-color-light;
-    border-radius: 2rem;
-    margin-top: 8rem;
-    padding: 3rem;
-    width: fit-content;
-  }
 
   &__form {
-    display: flex;
-  }
 
-  &__buttons {
-    padding: 0.5rem;
+    &__container {
+
+      background-color: $secondary-color;
+      border-radius: 0.5rem;
+      box-shadow: $box-shadow;
+      padding: 2rem;
+      color: white;
+    }
+
+    &__button {
+
+      &__update {
+        background-color: $submit-color
+      }
+
+      &__cancel {
+        background-color: $cancel-color;
+      }
+    }
+
+    &__options {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+      text-align: center;
+    }
+
   }
 }
+
+.action {
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 1rem;
+  }
+
+  &__edit {
+    background-color: $edit-color;
+    background-image: url(edit.svg);
+    border-radius: 5px;
+    color: $--black-color;
+    height: 3rem;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    width: 3rem;
+
+    &:hover {
+      box-shadow:  $box-shadow;
+      opacity: 0.5;
+    }
+  }
+
+  &__delete {
+    background-color: $delete-color;
+    background-image: url(delete.svg);
+    border-radius: 5px;
+    border: none;
+    height: 3rem;
+    padding: 5px;
+    text-align: center;
+    transition: 0.5s;
+    width: 3rem;
+
+    &:hover {
+      box-shadow:  $box-shadow;
+      opacity: 0.5;
+    }
+  }
+}
+
 
 .btn {
   
   &__newemployee {
     background-color: $--green-check;
     border-radius: 5px;
+    box-shadow: $box-shadow;
     padding: 5px;
     text-align: center;
     text-decoration: none;
     transition: 0.5s;
+    width: fit-content;
+
     &:hover {
-      background-color: $--white-color;
+      opacity: 0.5;
+      box-shadow: none;
     }
   }
-  
+
   &__container {
     display: grid;
     justify-content: center;
   }
-
-  &__edit {
-    background-color: $--green-check;
-    border-radius: 5px;
-    color: $--black-color;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.5s;
-
-    &:hover {
-      box-shadow:  5px 5px 10px #c1c1c1,
-             -5px -5px 10px #ffffff;
-    }
-  }
-
-  &__delete {
-    background-color: $--red-check;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-    text-align: center;
-    transition: 0.5s;
-
-    &:hover {
-      box-shadow:  5px 5px 10px #c1c1c1,
-             -5px -5px 10px #ffffff;
-    }
-  }
 }
 
-.form {
-
-  &__submit {
-    background-color: $--green-check;
-    border-radius: 5px;
-    padding: 5px;
-    text-decoration: none;
-  }
-
-  &__cancel {
-    background-color: $--red-check;
-    border-radius: 5px;
-    border: none;
-    padding: 5px; 
-  }
-}
 
