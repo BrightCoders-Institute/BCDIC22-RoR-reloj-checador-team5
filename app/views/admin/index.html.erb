@@ -1,23 +1,23 @@
 <a href="<%= root_path %>">
-  <button class="back">Logout</button>
+  <button class="back button">Logout</button>
 </a>
 
 <div class="card__container">
+  <div>
+    <h1 class='card__title'>Admin menu</h1>
+  </div>
+  <div>
+    <a href="<%= employees_path %>">
+      <div class="card__info">
+        <h2 class='card__option'>Employees</h2>
+      </div>
+    </a>
 
-  <div class="card__info">
-    <div class="card__content">
-      <h2 class='card__title'>Employees</h2>
-      <a href="<%= new_employee_path%>">Add new employee</a>
-      <a href="<%= employees_path %>">Manage Employees</a>
-    </div>
+    <a href="<%= companies_path %>">
+      <div class="card__info">
+        <h2 class='card__option'>Companies</h2>
+      </div>
+    </a>
   </div>
 
-  <div class="card__info">
-    <div class="card__content">
-      <h2 class='card__title'>Company</h2>
-      <a href="<%= new_company_path %>">Add new company</a>
-      <a href="<%= companies_path %>">Manage companies</a>
-    </div>
-  </div>
-
-</div>   
+</div>
