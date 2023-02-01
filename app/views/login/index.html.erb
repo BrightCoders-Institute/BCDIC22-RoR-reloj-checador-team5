@@ -1,14 +1,15 @@
 <a href="<%= root_path %>" class="a">
-  <button class="back">Back</button>
+  <button class="back button">Back</button>
 </a>
-
-<div class="container container__login">
-  <div class="login__content">
-    <h2 class="title">Admin</h2>
+<div>
+  <h1 class="login__title">Admin</h1>
+</div>
+<div class="container login__main__container">
+  <div class="login__container">
     <%= bootstrap_form_tag  url: login_index_path, method: :post do |form| %>
-      <%= form.password_field :password, placeholder:"e.g 20161102", class:"input input__login" %>
+      <%= form.password_field :password, placeholder:"Admin password", class:"input login__label" %>
 
-      <%= form.submit "Log in", class:"button button__login" %>
+      <%= form.submit "Log in", class:"button login__button" %>
     <% end %>
   </div>
 </div>
