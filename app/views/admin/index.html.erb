@@ -1,21 +1,23 @@
-<a href="<%= root_path %>" class="a">
+<a href="<%= root_path %>">
   <button class="back">Logout</button>
 </a>
 
 <div class="card__container">
-  <div class="card">
-    <div class="contenido">
-      <h2>Employees</h2>
+
+  <div class="card__info">
+    <div class="card__content">
+      <h2 class='card__title'>Employees</h2>
       <a href="<%= new_employee_path%>">Add new employee</a>
       <a href="<%= employees_path %>">Manage Employees</a>
     </div>
   </div>
 
-  <div class="card">
-    <div class="contenido">
-      <h2>Company</h2>
+  <div class="card__info">
+    <div class="card__content">
+      <h2 class='card__title'>Company</h2>
       <a href="<%= new_company_path %>">Add new company</a>
       <a href="<%= companies_path %>">Manage companies</a>
     </div>
   </div>
+
 </div>   
