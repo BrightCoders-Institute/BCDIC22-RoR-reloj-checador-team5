@@ -1,8 +1,3 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 1px;
-}
 .companies {
 
   &__content {
@@ -21,23 +16,30 @@
 .company {
 
   &__content{
-    background-color: $--white-color;
+    background-color: $company-card-color;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     margin: 1rem 0 1rem 0;
     padding: 1em;
+    box-shadow: $box-shadow;
+    transition: 0.2s;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 
   &__name {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
   }
 
   &__address {
-    font-size: 0.9em;
+    font-size: 1.5em;
     font-style: oblique;
     font-weight: lighter;
+
   }
 
   &__container {
@@ -46,17 +48,40 @@
     justify-content: center;
   }
 
-  &__body {
-    background-color: $--primary-color-light;
-    border-radius: 2rem;
-    margin-top: 8rem;
-    padding: 3rem;
-    width: fit-content;
-  }
-
   &__form {
-    display: flex;
+
+    &__container {
+      background-color: $secondary-color;
+      border-radius: 0.5rem;
+      box-shadow: $box-shadow;
+      padding: 2rem;
+      color: white;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+  
+    &__button {
+  
+      &__update {
+        background-color: $submit-color
+      }
+  
+      &__cancel {
+        background-color: $cancel-color;
+      }
+    }
+  
+    &__options {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+      text-align: center;
+    }
+  
   }
+  
 
   &__buttons {
     padding: 0.5rem;
@@ -79,54 +104,42 @@
   }
   
   &__container {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
   }
 
   &__edit {
-    background-color: $--green-check;
+    background-color: $edit-color;
+    background-image: url(edit.svg);
     border-radius: 5px;
     color: $--black-color;
+    height: 3rem;
     padding: 5px;
-    text-align: center;
-    text-decoration: none;
     transition: 0.5s;
+    width: 3rem;
 
     &:hover {
-      box-shadow:  5px 5px 10px #c1c1c1,
-              -5px -5px 10px #ffffff;
+      box-shadow: none;
+      opacity: 0.5;
     }
   }
 
   &__delete {
-    background-color: $--red-check;
+    background-color: $delete-color;
+    background-image: url(delete.svg);
     border-radius: 5px;
-    border: none;
+    height: 3rem;
     padding: 5px;
     text-align: center;
     transition: 0.5s;
+    width: 3rem;
 
     &:hover {
-      box-shadow:  5px 5px 10px #c1c1c1,
-             -5px -5px 10px #ffffff;
+      box-shadow:  none;
+      opacity: 0.5;
     }
   }
 }
 
-.form {
 
-  &__submit {
-    background-color: $--green-check;
-    border-radius: 5px;
-    padding: 5px;
-    text-decoration: none;
-  }
-
-  &__cancel {
-    background-color: $--red-check;
-    border-radius: 5px;
-    border: none;
-    padding: 5px; 
-  }
-}
 
