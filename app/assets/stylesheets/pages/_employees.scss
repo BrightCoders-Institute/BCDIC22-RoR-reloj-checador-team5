@@ -1,13 +1,12 @@
 .employees {
 
   &__content {
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0px auto;
     width: fit-content;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: $secondary-color;
-    box-shadow: $box-shadow;
   }
 
   &__title {
@@ -20,12 +19,11 @@
   &__form {
 
     &__container {
-
       background-color: $secondary-color;
       border-radius: 0.5rem;
       box-shadow: $box-shadow;
-      padding: 2rem;
       color: white;
+      padding: 2rem;
     }
 
     &__button {
@@ -48,74 +46,3 @@
 
   }
 }
-
-.action {
-
-  &__container {
-    display: flex;
-    flex-direction: row;
-    margin: 1rem 1rem;
-  }
-
-  &__edit {
-    background-color: $edit-color;
-    background-image: url(edit.svg);
-    border-radius: 5px;
-    color: $--black-color;
-    height: 3rem;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.5s;
-    width: 3rem;
-
-    &:hover {
-      box-shadow:  $box-shadow;
-      opacity: 0.5;
-    }
-  }
-
-  &__delete {
-    background-color: $delete-color;
-    background-image: url(delete.svg);
-    border-radius: 5px;
-    border: none;
-    height: 3rem;
-    padding: 5px;
-    text-align: center;
-    transition: 0.5s;
-    width: 3rem;
-
-    &:hover {
-      box-shadow:  $box-shadow;
-      opacity: 0.5;
-    }
-  }
-}
-
-
-.btn {
-  
-  &__newemployee {
-    background-color: $--green-check;
-    border-radius: 5px;
-    box-shadow: $box-shadow;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.5s;
-    width: fit-content;
-
-    &:hover {
-      opacity: 0.5;
-      box-shadow: none;
-    }
-  }
-
-  &__container {
-    display: grid;
-    justify-content: center;
-  }
-}
-
-
