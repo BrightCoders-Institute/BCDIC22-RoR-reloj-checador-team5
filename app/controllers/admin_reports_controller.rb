@@ -4,23 +4,12 @@ class AdminReportsController < ApplicationController
   helper_method :absence
   # helper_method :options
 
-  def index 
-    puts admin_reports_url
-  end
+  def index; end
 
   private
 
-  def options
-    sql = 'select id, name from companies order by name'
-    records_array = ActiveRecord::Base.connection.execute(sql)
-    records_array.each do | id, name |
-     name
-    end
-  end
-
   def company
     param = params[:company_id].nil? ? 1 : params[:company_id]
-    puts param
     Company.find_by(id: param.to_i)
   end
 
