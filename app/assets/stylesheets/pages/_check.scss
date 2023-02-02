@@ -26,7 +26,7 @@
   }
 
   &__label {
-    color: $--white-color;
+    color: $color;
     text-align: none;
   }
 
@@ -42,13 +42,12 @@
       background-color: $check-in-color;
       border-radius: 0.3rem;
       border: 0;
-      box-shadow: $box-shadow;
       padding: 0.5rem;
       transition: 0.5s;
 
       &:hover {
         opacity: 0.8;
-        box-shadow: none;
+        box-shadow: $box-shadow;
       }
     }
 
@@ -56,13 +55,12 @@
       background-color: $check-off-color;
       border: 0;
       border-radius: 0.3rem;
-      box-shadow: $box-shadow;
       padding: 0.5rem;
       transition: 0.5s;
   
       &:hover {
         opacity: 0.8;
-        box-shadow: none;
+        box-shadow: $box-shadow;
       }
     }
   }
@@ -93,7 +91,7 @@
 .message {
 
   &__content {
-    background-color: $--white-color;
+    background-color: $color;
     border-radius: 3rem;
     font-weight: bold;
     padding: 0;

@@ -12,7 +12,7 @@
 
 .back {
   align-items: center;
-  background-color: $--red-check;
+  background-color: $admin-color;
   border-radius: 0.2rem;
   display: flex;
   flex-direction: row;
@@ -24,14 +24,14 @@
 .btn {
   
   &__new{
-    background-color: $--green-check;
+    background-color: $check-in-color;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
     text-decoration: none;
     transition: 0.5s;
     &:hover {
-      background-color: $--white-color;
+      background-color: $color;
     }
   
   }
@@ -49,7 +49,7 @@
     background-image: url(edit.svg);
     border-radius: 5px;
     margin-right: .25rem;
-    padding: 1rem;
+    padding: 1.25rem;
     text-align: center;
     transition: 0.5s;
 
@@ -63,7 +63,7 @@
     background-image: url(delete.svg);
     border-radius: 5px;
     margin-left: .25rem;
-    padding: 1rem;
+    padding: 1.25rem;
     text-align: center;
     transition: 0.5s;
 
