@@ -10,17 +10,19 @@
   </div>
 
   <div class="main__content">
-    <%= form_with url: admin_reports_url, method: :get do | form | %>
+      <%= javascript_include_tag 'admin_reports_charts' %>
+      <button id='btn-attendance' class='btn' >Attendance</button>
+      <button id='btn-average' class='btn' >Average</button>
+      <button id='btn-absence' class='btn' >Absence</button>
+
+      <%= form_with url: admin_reports_url, method: :get do | form | %>
       <div class='reports'>
         <% form.hidden_field name:'authenticity_token', value:form_authenticity_token %>
-        <%= javascript_include_tag 'admin_reports_charts' %>
-        <%= form.button 'Attendance', id:'btn-attendance', class:'btn' %>
-        <%= form.button 'Average', id:'btn-average', class:'btn' %>
-        <%= form.button 'Absence', id:'btn-absence', class:'btn' %>
       </div>
 
       <label>Choose a company</label>
       <%= form.collection_select :company_id, Company.all, :id, :name%>
+      <%= form.submit 'Search' %>
 
     <% end %>
     <%= render 'reports' %>
