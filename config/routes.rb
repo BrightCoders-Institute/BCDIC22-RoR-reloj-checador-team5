@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :companies
   resources :admin, only: [:index]
 
+  namespace :authentication, path: '', as: '' do
+    resources :users, only: [:new, :create]
+  end
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

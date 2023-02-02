@@ -1,0 +1,24 @@
+<a href="<%= root_path %>" class="a">
+  <button class="back">Back</button>
+</a>
+
+    <%= form_with(model: @user) do |form| %>
+      <% @user.errors.full_messages.each do |error| %>
+        <div>
+          <%= error %>
+        </div>
+      <% end %>
+
+      <div>
+        <%= form.label :username %>
+        <%= form.text_field :username, placeholder:"e.g admin", class:"input input__login" %>
+      </div>
+
+      <div>
+        <%= form.label :password %>
+        <%= form.password_field :password, placeholder:"e.g 1234", class:"input input__login" %>
+      </div>
+
+      <%= form.submit "Creat User", class:"button button__login" %>
+    <% end %>
+
