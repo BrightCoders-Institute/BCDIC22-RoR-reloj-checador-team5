@@ -8,7 +8,8 @@
   <div class="content">
     <div class="time__container">
       <h5 class="h5"><%= Time.now.strftime("%F")%></h5>
-      <h2 class="h2"><%= Time.now.strftime("%H:%M")%> </h2>
+      <h2 class='clock' ></h2>
+      <%=  javascript_include_tag 'clock' %>
     <div>
 
     <div class="checking__container">
