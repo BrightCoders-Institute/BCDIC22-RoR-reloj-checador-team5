@@ -3,15 +3,16 @@
     <%= image_tag("/assets/admin.svg", alt: "Logo", width: "40", height: "40", class:"d-inline-block align-text-top") %>
   </button>
 </a>
+
 <div class="clock__container">
   <h1>Time Clock Team 5</h1>
   <h2><%= Time.now.strftime("%a, %d %B %Y")%></h2>
   <h1 class='clock' ></h1>
   <%=  javascript_include_tag 'clock' %>
 <div>
+
 <div class="container check__container">
   <div class="check__content">
-
     <div>
       <%= form_with url: checks_path, method: :post do |form| %>
         <div class="mb-2">
