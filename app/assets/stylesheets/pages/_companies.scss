@@ -9,6 +9,17 @@
     font-size: 2.2em;
     font-weight: bold;
     text-align: center;
+    
+  }
+}
+
+.title {
+  @include small {
+    height: max-content;
+    flex-direction: column;
+    text-align: center;
+    font-size: 3em;
+    
   }
 }
 
