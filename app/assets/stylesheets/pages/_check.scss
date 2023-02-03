@@ -1,66 +1,88 @@
-.container {
-  &__check {
+.clock {
+  color: $text-color;
+  font-size: 8rem;
+  text-shadow: $box-shadow;
+
+  &__container {
+    color: $text-color;
+    text-align: center;
+    text-shadow: $box-shadow;
+
+    @include small {
+      padding-top: 4rem;
+    }
+  }
+
+  @include small {
+    font-size: 4rem;
+  }
+}
+
+.check {
+
+  &__container {
     flex-direction: column;
+    justify-content: center;
   }
-}
-.content {
-  background-color: $--primary-color-light;
-  border-radius: 2rem;
-  display: flex;
-  justify-content: center;
-  padding: 3rem;
-}
 
-.time__container {
-  font-family: $--primary-font;
-  text-align: center;
+  &__content {
+    background-color: $secondary-color;
+    border-radius: 0.5rem;
+    box-shadow: $box-shadow;
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
 
-  .h2 {
-    font-size: 7rem;
-  }
-}
-
-.check__buttons_container {
-  display: flex;
-  margin-top: 1rem;
-  justify-content: space-around;
-  padding: 0rem 1.5rem 0rem 1.5rem;
-
-  &__in {
-    background-color: $--check-in-color;
-    border-radius: 0.3rem;
-    border: 0;
-    color: $--black-color;
-
-    &:hover {
-      background-color: $--green-check;
+    @include small {
+      padding: 2.5rem;
     }
   }
 
-  &__off {
-    background-color: $--check-off-color;
-    border: 0;
-    border-radius: 0.3rem;
-    color: $--black-color;
+  &__label {
+    color: $color;
+    text-align: none;
+  }
 
-    &:hover {
-      background-color: $--red-check;
+  &__buttons {
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    &__in {
+      background-color: $check-in-color;
+      border-radius: 0.3rem;
+      border: 0;
+      padding: 0.5rem;
+      transition: 0.5s;
+
+      &:hover {
+        opacity: 0.8;
+        box-shadow: $box-shadow;
+      }
+    }
+
+    &__off {
+      background-color: $check-off-color;
+      border: 0;
+      border-radius: 0.3rem;
+      padding: 0.5rem;
+      transition: 0.5s;
+  
+      &:hover {
+        opacity: 0.8;
+        box-shadow: $box-shadow;
+      }
     }
   }
-}
-
-.admin {
-  align-self: initial;
-  background-color: $--sencondary-color-light;
-  border-radius: 0.5rem;
-  border: 0.2rem;
-  justify-self: left;
-  margin:1rem;
 }
 
 .message {
+
   &__content {
-    background-color: $--white-color;
+    background-color: $color;
     border-radius: 3rem;
     font-weight: bold;
     padding: 0;
@@ -68,11 +90,11 @@
   }
 
   .alert {
-    color: $--check-off-color,
+    color: $notsuccess-color;
   }
 
   .notice {
-    color: $--check-in-color;
+    color: $success-color;
   }
 }
 

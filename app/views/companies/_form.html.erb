@@ -1,6 +1,6 @@
-<div class='company__container' >
-	<div class="company__body">
-		<div class="company__form">
+<div class='container' >
+	<div class="company__form__container">
+		<div class=" ">
 			<%=  form_for @company do  |form| %>
 				<% @company.errors.full_messages.each do |error| %>
 					<div>
@@ -8,19 +8,19 @@
 					</div>
 				<% end %>
 				<div class="company__controls">
-				<div>Nombre</div>
-					<%= form.text_field :name %>
+				<div>Company Name</div>
+					<%= form.text_field :name, placeholder: 'Spotify' %>
 				</div>
 
 				<div class="company__controls">
 				<div>Address</div>
-					<%= form.text_field :address %>
+					<%= form.text_field :address, placeholder: 'Florida' %>
 				</div>
 				<div class= "company__buttons">
-					<%= form.submit %>
-					<a href="<%= companies_path %>"> <button class='form__cancel' >Cancel</button></a>
+					<%= form.submit class: 'company__form__button__update button'%>
 				</div>
 			<% end %>
+				<a href="<%= companies_path %>"> <button class='company__form__button__cancel button' >Cancel</button></a>
 		</div>
 	</div>
 </div>

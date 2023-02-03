@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   match 'admin_reports', to: 'admin_reports#index', via: [:get]
   resources :companies
 
+  namespace :authentication, path: '', as: '' do
+    resources :users, only: [:new, :create]
+  end
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

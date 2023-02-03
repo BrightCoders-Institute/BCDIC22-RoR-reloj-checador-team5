@@ -1,10 +1,10 @@
 <a href="<%= admin_index_path %>" class="a">
-  <button class="back">Back</button>
+  <button class="back button">Back</button>
 </a>
 
 <div class="companies__content">
-  <h1 class='companies__title' >Company Maganer</h1>
-  <a href="<%= new_company_path %>" class='btn__newcompany' >Add new company</a>
+  <h1 class='title' >Company Maganer</h1>
+  <a href="<%= new_company_path %>" class='btn__new' >Add new company</a>
   <% @companies.each do |company| %>
 
     <div class= "company__content">
@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class='btn__container' >
-        <%= link_to 'Edit', edit_company_path(company), class: 'btn__edit' %>
-        <%= button_to 'Delete', company_path(company), method: :delete, class: 'btn__delete' %>
+        <%= link_to'', edit_company_path(company), class: 'btn__edit button' %>
+        <%= button_to '', company_path(company), method: :delete, class: 'btn__delete button' %>
       </div>
     </div>
     

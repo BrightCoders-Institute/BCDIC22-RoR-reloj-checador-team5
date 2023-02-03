@@ -1,8 +1,43 @@
-.admin {
+.card {
 
-    &__card {
-        display: flex;
-        justify-content: center;
-        background-color: red;
+  &__title {
+    color: $text-color;
+    font-size: 6rem;
+    text-align: center;
+    text-shadow: $box-shadow;
+  }
+
+  &__container {
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__info {
+    align-items: center;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    justify-content: center;
+    margin: 20px;
+    transition: 0.5s;
+    width: 20rem;
+
+    &:hover {
+      box-shadow: none !important;
     }
+
+    &:focus {
+      box-shadow: $box-shadow-inset;
+    }
+  }
+
+  &__option {
+    color: white !important;
+  }
 }

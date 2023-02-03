@@ -1,31 +1,32 @@
 <a href="<%= new_session_path %>">
-  <button class="admin">ADMIN
+  <button class="admin__button">
     <%= image_tag("/assets/admin.svg", alt: "Logo", width: "40", height: "40", class:"d-inline-block align-text-top") %>
   </button>
 </a>
 
-<div class="container container__check">
-  <div class="content">
-    <div class="time__container">
-      <h5 class="h5"><%= Time.now.strftime("%F")%></h5>
-      <h2 class='clock' ></h2>
-      <%=  javascript_include_tag 'clock' %>
-    <div>
+<div class="clock__container">
+  <h1>Time Clock Team 5</h1>
+  <h2><%= Time.now.strftime("%a, %d %B %Y")%></h2>
+  <h1 class='clock' ></h1>
+  <%=  javascript_include_tag 'clock' %>
+<div>
 
-    <div class="checking__container">
+<div class="container check__container">
+  <div class="check__content">
+    <div>
       <%= form_with url: checks_path, method: :post do |form| %>
         <div class="mb-2">
           <div>
-            <%= form.label :employee %>
+            <%= form.label :employee, class: 'check__label' %>
           </div>
-          <%= form.number_field :employee, placeholder:"e.g 20161102" %>
+          <%= form.number_field :employee, placeholder:"Employee Number" %>
         </div>
 
         <div class="mb-2">
           <div>
-            <%= form.label :number_private %>
+            <%= form.label :number_private, class: 'check__label' %>
           </div>
-          <%= form.password_field :number_private, placeholder:"Ex: 2077" %>
+          <%= form.password_field :number_private, placeholder:"Employe Private Number" %>
         </div>
 
         <div class="message">
@@ -36,9 +37,9 @@
           <% end %>
         </div>
 
-        <div class="check__buttons_container">
-          <%= form.button "Check in", name:"check", value:"in", class: "check__buttons_container__in" %>
-          <%= form.button "Check off", name:"check", value:"off",  class: "check__buttons_container__off" %>
+        <div class="check__buttons__container">
+          <%= form.button "Check In", name:"check", value:"in", class: "check__buttons__in" %>
+          <%= form.button "Check Off", name:"check", value:"off",  class: "check__buttons__off" %>
         </div>
       <% end %>
     </div>
