@@ -66,28 +66,6 @@
   }
 }
 
-
-
-.admin {
-
-  &__button {
-
-    align-self: initial;
-    background-color: $admin-color;
-    border-radius: 0.5rem;
-    border: 0.2rem;
-    box-shadow: $box-shadow;
-    justify-self: left;
-    margin:1rem;
-    position: absolute;
-    transition: 0.5s;
-
-    &:hover {
-      padding: 1rem;
-    }
-  }
-}
-
 .message {
 
   &__content {

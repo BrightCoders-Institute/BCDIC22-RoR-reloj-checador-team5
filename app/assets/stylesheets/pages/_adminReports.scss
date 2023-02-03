@@ -5,17 +5,13 @@
     flex-direction: column;
     padding: .5rem;
     text-align: center;
-
-    .title {
-      color: $--white-color;
-    }
   }
 }
 
 .chart {
 
   &__container {
-    background-color: $background-color;
+    background-color: $body-color;
     border-radius: 10px;
     box-shadow: $box-shadow-inset;
     margin-top: 1rem;
@@ -24,22 +20,32 @@
 
   &__content {
     align-items: center;
-    background-color: $background-color;
+    background-color: $body-color;
     display: flex;
     margin: 2rem;
   }
 }
 
 .btn {
-  box-shadow: $box-shadow;
-  margin: 0 1rem 0 1rem;
 
-  &:hover {
-    box-shadow: none;
-  }
+  &__reports {
 
-  &:focus {
-    box-shadow: $box-shadow-inset
+    box-shadow: $box-shadow;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 5px;
+    color: $color;
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    transition: 0.5s;
+    
+    &:hover {
+      box-shadow: none;
+    }
+    
+    &:focus {
+      box-shadow: $box-shadow-inset
+    }
   }
 }
 

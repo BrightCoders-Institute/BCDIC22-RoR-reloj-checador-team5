@@ -1,11 +1,12 @@
 .employees {
 
+
   &__content {
     background-color: $secondary-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0px auto;
+    padding: .5rem;
     width: fit-content;
   }
 

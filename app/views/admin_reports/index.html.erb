@@ -11,9 +11,9 @@
 
   <div class="main__content">
       <%= javascript_include_tag 'admin_reports_charts' %>
-      <button id='btn-attendance' class='btn' >Attendance</button>
-      <button id='btn-average' class='btn' >Average</button>
-      <button id='btn-absence' class='btn' >Absence</button>
+      <button id='btn-attendance' class='btn__reports' >Attendance</button>
+      <button id='btn-average' class='btn__reports'>Average</button>
+      <button id='btn-absence' class='btn__reports' >Absence</button>
 
       <%= form_with url: admin_reports_url, method: :get do | form | %>
       <div class='reports'>
