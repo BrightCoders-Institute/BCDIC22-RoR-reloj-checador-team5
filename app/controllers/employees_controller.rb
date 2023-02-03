@@ -14,7 +14,7 @@ class EmployeesController < ApplicationController
 
   def create
     @company = Company.find_by(company_params)
-    @employee = @company.employees.new(employee_params)
+    @employee = @company.employees.new(employee_params.merge(:is_employee => true))
     if @employee.save
       redirect_to employees_path
     else
@@ -35,7 +35,8 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-    employee.destroy
+    employee.is_employee = false
+    employee.save
     redirect_to employees_path
   end
 

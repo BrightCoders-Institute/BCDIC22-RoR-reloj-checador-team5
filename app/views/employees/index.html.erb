@@ -19,7 +19,7 @@
       
       <div class='employees__data'>
         <div class='employees__data_info'>
-          <%= employee.position %>
+          Position: <%= employee.position %>
         </div>
       </div>
       
@@ -35,7 +35,13 @@
 
       <div class='employees__data'>
         <div class='employees__data_info'>
-          <%= employee.company.name %>
+          Company: <%= employee.company.name %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Status: <%= employee.is_employee ? 'Working' : 'Disabled' %>
         </div>
       </div>
 
