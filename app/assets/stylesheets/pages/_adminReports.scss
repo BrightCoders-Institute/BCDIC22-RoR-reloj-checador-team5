@@ -3,8 +3,8 @@
   &__container {
     display: flex;
     flex-direction: column;
-    text-align: center;
     padding: .5rem;
+    text-align: center;
 
     .title {
       color: $--white-color;
@@ -27,8 +27,6 @@
     background-color: $background-color;
     display: flex;
     margin: 2rem;
-    // width: 90rem;
-    // height: 30rem;
   }
 }
 
@@ -44,3 +42,4 @@
     box-shadow: $box-shadow-inset
   }
 }
+

@@ -15,3 +15,4 @@ $(document).ready(() => {
       $("#div-attendance,#div-average").hide();
     });
 });
+

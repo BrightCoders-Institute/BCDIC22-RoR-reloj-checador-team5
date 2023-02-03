@@ -1,8 +1,5 @@
 class AdminReportsController < ApplicationController
-  helper_method :attendance
-  helper_method :average
-  helper_method :absence
-  # helper_method :options
+  helper_method :attendance, :average, :absence
 
   def index; end
 
@@ -19,21 +16,21 @@ class AdminReportsController < ApplicationController
   end
 
   def average
-      checks = Check.where(employee_id: company.employees.ids)
-      checks.group_by_month(:datetime).average(:employee_id)
+    checks = Check.where(employee_id: company.employees.ids)
+    checks.group_by_month(:datetime).average(:employee_id)
   end
 
   def absence
-      hash = Check.group_by_day(:datetime).where(employee_id: company.employees.ids, check: 'in').count
-      result = {}
-      final_hash = {}
-      hash.each do | key, value |
-        absence = 0
-        numEmployees = company.employees.count
-        absence = numEmployees - value
-        result[key] = absence
-      end
-      result
+    hash = Check.group_by_day(:datetime).where(employee_id: company.employees.ids, check: 'in').count
+    result = {}
+    final_hash = {}
+    hash.each do | key, value |
+      absence = 0
+      numEmployees = company.employees.count
+      absence = numEmployees - value
+      result[key] = absence
+    end
+    result
   end
 end
 
