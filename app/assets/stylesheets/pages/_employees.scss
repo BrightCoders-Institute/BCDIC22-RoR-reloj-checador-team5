@@ -1,13 +1,31 @@
 .employees {
 
-
   &__content {
+    align-items: center;
     background-color: $secondary-color;
+    border-radius: 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: .5rem;
-    width: fit-content;
+    justify-content: space-around;
+    margin: .25rem;
+  }
+
+  &__content:nth-child(even) {
+    background-color: $card-color;
+  }
+  
+  &__data {
+    display: block;
+
+    &_name {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    &_info {
+      font-size: 1.5em;
+      font-style: oblique;
+      font-weight: lighter;
+    }
   }
 
   &__title {

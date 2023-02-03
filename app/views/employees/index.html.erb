@@ -1,35 +1,51 @@
-<a href="<%= admin_index_path %>" class="a">
-  <button class="back button">Back</button>
+<a href='<%= admin_index_path %>' class='a'>
+  <button class='back button'>Back</button>
 </a>
 
   <h1 class='title' >Employee Maganer</h1>
   <a href="<%= new_employee_path %>" class='btn__new' >Add new employee</a>
-<div class="employees__content">
+<div class='employees__container'> 
+  <% @employees.each do | employee | %>
+    <div class='employees__content'>
+      <div class='employees__data'>
+        <div class='employees__data_name'>
+         <%= employee.name %>
+        </div>
+        
+        <div class='employees__data_info'>
+          <%= employee.email %>
+        </div>
+      </div>
+      
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          <%= employee.position %>
+        </div>
+      </div>
+      
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Number Employee: <%= employee.employee %>
+        </div>
 
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Email</th>
-      <th>Number</th>
-      <th>Private Number</th>
-      <th>action</th>
-    </tr>
-    <% @employees.each do | employee | %>
-      <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.name %></td>
-        <td><%= employee.position %></td>
-        <td><%= employee.email %></td>
-        <td><%= employee.employee%></td>
-        <td><%= employee.number_private%></td>
-        <td class='btn__container'>
+        <div class='employees__data_info'>
+          Number private: <%= employee.number_private %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          <%= employee.company.name %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='btn__container'>
           <%= link_to '', edit_employee_path(employee), class: 'btn__edit button' %>
           <%= button_to '', employee_path(employee), method: :delete, class: 'btn__delete button' %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
