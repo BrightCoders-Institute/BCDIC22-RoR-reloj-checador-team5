@@ -5,3 +5,51 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+# seed para crear empleados para las graficas
+
+company_quantity = 5
+employee_quantity = 10
+checks_quantity = employee_quantity
+checks_per_employee = 5
+
+company_quantity.times do |i|
+  Company.create(
+    name: Faker::Company.unique.name,
+    address: Faker::Address.full_address,
+  )
+end
+
+company_quantity.times do |j|
+  employee_quantity.times do |i|
+    employee_number = Faker::Number.unique.number(digits: 3)
+    Employee.create(
+      company_id: j+1,
+      employee: employee_number,
+      email: "#{Faker::Ancient.god}@gmail.com",
+      name: Faker::Name.unique.name,
+      position: Faker::Job.position,
+      number_private: Faker::Number.number(digits: 3),
+      is_employee: Faker::Boolean.boolean(true_ratio: 0.8),
+    )
+  end
+end
+
+3.times do |j|
+  50.times do |i|
+    date = Faker::Date.between(from: 2.month.ago, to: Date.today)
+    Check.create(
+      employee_id: i+1,
+      datetime: date,
+      check: 'in',
+    )
+    Check.create(
+      employee_id: i+1,
+      datetime: date,
+      check: 'off',
+    )
+  end
+end
+
+

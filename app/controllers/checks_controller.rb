@@ -2,8 +2,10 @@
 
 # Controller for validating the check
 class ChecksController < ApplicationController
+  skip_before_action :protect_pages
+
   def index
-    nil
+    reset_session
   end
 
   def create
@@ -28,3 +30,4 @@ class ChecksController < ApplicationController
     params.permit(:check)
   end
 end
+
