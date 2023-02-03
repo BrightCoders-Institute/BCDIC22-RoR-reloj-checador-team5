@@ -15,9 +15,5 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: $text-color;
-}
-
-tr:hover {
-  opacity: 0.1;
+  background-color: $secondary-color;
 }
