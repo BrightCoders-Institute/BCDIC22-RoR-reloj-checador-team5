@@ -4,9 +4,10 @@
 
   <h1 class='title' >Employee Maganer</h1>
   <a href="<%= new_employee_path %>" class='btn__new' >Add new employee</a>
-<div class='employees__container'> 
+<div class='employees__container'>
   <% @employees.each do | employee | %>
-    <div class='employees__content'>
+    <div class= <%= employee.is_employee ? 'employees__content' : 'employees__content__disabled' %> >
+
       <div class='employees__data'>
         <div class='employees__data_name'>
          <%= employee.name %>
@@ -39,7 +40,7 @@
         </div>
       </div>
 
-      <div class='employees__data'>
+      <div class= <%= 'employees__data'; employee.is_employee ? nil : 'employees__content__disabled' %> >
         <div class='employees__data_info'>
           Status: <%= employee.is_employee ? 'Working' : 'Disabled' %>
         </div>
@@ -48,7 +49,21 @@
       <div class='employees__data'>
         <div class='btn__container'>
           <%= link_to '', edit_employee_path(employee), class: 'btn__edit button' %>
-          <%= button_to '', employee_path(employee), method: :delete, class: 'btn__delete button' %>
+          <% if employee.is_employee == true %>
+            <%= button_to "Dormir", employee_path(employee, is_employee: false), method: :post, class: "button-delete" %>
+          <% else %>
+            <%= button_to "Wake", employee_path(employee, is_employee: true), method: :post, class: "button-delete" %>
+          <%end%>
+          
+          <%#= button_to '', 
+            employee_path(employee), 
+            method: :post,
+            class: 'btn__delete button',
+            data: {
+                    turbo_method: :btn__delete,
+                    turbo_confirm: "Are you sure?"
+                  }
+          %>
         </div>
       </div>
     </div>
