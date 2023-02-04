@@ -10,4 +10,14 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+<<<<<<< Updated upstream
+=======
+  def login
+    post sessions_path, params: { password: 'admin' }
+  end
+
+  # def employee_create
+  #   post companies_new_url, params: {name: 'goole', address: 'colima'}
+  # end
+>>>>>>> Stashed changes
 end
