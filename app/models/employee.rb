@@ -1,6 +1,7 @@
 class Employee < ApplicationRecord
   belongs_to :company
-  validates :employee, presence: true
+
+	validates :employee, presence: true
 	validates :email, presence: true
 	validates :name, presence: true
 	validates :position, presence: true
