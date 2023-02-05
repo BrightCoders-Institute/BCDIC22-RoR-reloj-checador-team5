@@ -35,7 +35,13 @@
 
       <div class='employees__data'>
         <div class='employees__data_info'>
-          Company: <%= employee.company.name %>
+          Company: <%= 
+            name = ''
+            @companies.each do | company |
+              name = company[:name] if company[:id] == employee.company_id
+            end
+            name != '' ? name : 'No asignet'
+          %>
         </div>
       </div>
 
