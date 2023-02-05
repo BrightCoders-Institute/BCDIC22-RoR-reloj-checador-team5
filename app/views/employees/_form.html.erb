@@ -1,3 +1,4 @@
+
 <div class="container">
 	<div class='employees__form__container'>
 		<%=  bootstrap_form_for (@employee) do |form| %>
@@ -7,6 +8,12 @@
 					<%= error %>
 				</div>
 			<% end %>
+
+			<div class='employees__form__options'>
+				<div class='employees__form__container'>
+					<%= form.collection_select :company_id, Company.all, :id, :name %>
+				</div>
+			</div>
 
 			<div>
 				<%= form.text_field :email %>

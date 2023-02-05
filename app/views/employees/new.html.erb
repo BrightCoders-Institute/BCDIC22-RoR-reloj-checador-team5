@@ -1,17 +1,4 @@
 <h1 class='title'>New employee</h1>
 
-
-<div class='employees__form__options'>
-  <div class='employees__form__container'>
-    <div>
-      <label>Select a company </label>
-    </div>
-    <select name="name">
-      <% @companies.each do | company | %>
-        <option value="<%= company.name %>"><%= company.name %></option>
-      <% end %>
-    </select>
-  </div>
-</div>
 <%= render 'form' %>
 
