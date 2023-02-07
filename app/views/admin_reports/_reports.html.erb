@@ -1,0 +1,14 @@
+<div class='chart__container' >
+  <div class='chart__content' id='div-attendance'>
+    <%= area_chart attendance, code: true, title: "Attendance by day for employees" %>
+  </div>
+
+  <div class='chart__content' id='div-average'>
+    <%= line_chart average, code: true, title: 'Average time employees checked in/out by month' %>
+  </div>
+
+  <div class='chart__content'id='div-absence'>
+    <%= area_chart absence, code: true, title: 'Absence report by day' %>
+  </div>
+<div>
+

@@ -1,28 +1,55 @@
-<a href="<%= admin_index_path %>" class="a">
-  <button class="back">Back</button>
+<a href='<%= admin_index_path %>' class='a'>
+  <button class='back button'>Back</button>
 </a>
 
-<div class="employees__content">
-  <h1 class='employees__title' >Employee Maganer</h1>
-  <a href="<%= new_employee_path %>" class='btn__newemployee' >Add new employee</a>
+  <h1 class='title' >Employee Maganer</h1>
+  <a href="<%= new_employee_path %>" class='btn__new' >Add new employee</a>
+<div class='employees__container'> 
   <% @employees.each do | employee | %>
-
-    <div class= "employee__content">
-      <div class='employee__info'>
-        <div class="employee__name">
-          <%= employee.name %>
+    <div class='employees__content'>
+      <div class='employees__data'>
+        <div class='employees__data_name'>
+         <%= employee.name %>
         </div>
-
-        <div class="employee__text">
-          <%= employee.position %>
-          <%= employee.employee %>
+        
+        <div class='employees__data_info'>
           <%= employee.email %>
         </div>
       </div>
+      
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Position: <%= employee.position %>
+        </div>
+      </div>
+      
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Number Employee: <%= employee.employee %>
+        </div>
 
-      <div class='btn__container' >
-        <%= link_to 'Edit', edit_employee_path(employee), class: 'btn__edit' %>
-        <%= button_to 'Delete', employee_path(employee), method: :delete, class: 'btn__delete' %>
+        <div class='employees__data_info'>
+          Number private: <%= employee.number_private %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Company: <%= employee.company.name %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='employees__data_info'>
+          Status: <%= employee.is_employee ? 'Working' : 'Disabled' %>
+        </div>
+      </div>
+
+      <div class='employees__data'>
+        <div class='btn__container'>
+          <%= link_to '', edit_employee_path(employee), class: 'btn__edit button' %>
+          <%= button_to '', employee_path(employee), method: :delete, class: 'btn__delete button' %>
+        </div>
       </div>
     </div>
   <% end %>

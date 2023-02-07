@@ -3,16 +3,92 @@
   border: 0;
   margin-top: 1rem;
   padding: 0rem 1.5rem 0rem 1.5rem;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: $box-shadow;
+    opacity: 0.8;
+  }
 }
 
 .back {
   align-items: center;
-  background: url("/assets/back.svg") left center no-repeat;
-  background-color: $--red-check;
-  border-radius: 0.5rem;
-  border: 0.2rem;
+  background-color: $admin-color;
+  border-radius: 0.2rem;
   display: flex;
-  padding: .5rem .5rem .5rem 2rem;
   flex-direction: row;
+  padding: .5rem 1rem .5rem 1rem;
   margin: 1rem;
+  transition: 0.5s;
+}
+
+.btn {
+
+  &__new{
+    background-color: $check-in-color;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+      background-color: $color;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+
+  &__edit {
+    background-color: $edit-color;
+    background-image: url(edit.svg);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    margin-right: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__delete {
+    background-color: $delete-color;
+    background-image: url(delete.svg);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    margin-left: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.admin {
+
+  &__button {
+    align-self: initial;
+    background-color: $admin-color;
+    border-radius: 0.5rem;
+    border: 0.2rem;
+    box-shadow: $box-shadow;
+    justify-self: left;
+    margin:1rem;
+    position: absolute;
+    transition: 0.5s;
+
+    &:hover {
+      padding: 1rem;
+    }
+  }
 }

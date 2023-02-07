@@ -1,18 +1,35 @@
-.container {
-  &__login{
+.login {
+
+
+  &__main__container {
     flex-direction: column;
   }
-}
 
-.login__content {
-  background: url("/assets/admin.svg") center top no-repeat;
-  background-color: $--primary-color-light;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 3rem;
-  padding: 3rem;
-  text-align: center;
+  &__title {
+    color: $text-color;
+    font-size: 6rem;
+    text-align: center;
+    text-shadow: $box-shadow;
+  }
+
+  &__label {
+    color: $text-color;
+  }
+
+  &__button {
+    background-color: $success-color;
+  }
+  
+  &__container {
+    background-color: $secondary-color;
+    border-radius: 0.5rem;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 3rem;
+    text-align: center;
+  }
 }
 
