@@ -40,14 +40,14 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-    employee.is_employee = false
-    employee.save
-    redirect_to employees_path
+    @employee = Employee.find(params[:id])
+    @employee.update(:is_employee => false)
+    redirect_to ...
   end
 
   private
     def employee_params
-      params.require(:employee).permit(:email, :name, :position, :employee, :number_private, :company_id) 
+      params.require(:employee).permit(:email, :name, :position, :employee, :number_private)
     end
 
     def employee
