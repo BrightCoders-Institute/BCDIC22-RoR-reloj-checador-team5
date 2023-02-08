@@ -1,4 +1,4 @@
-.button {
+button {
   border-radius: 0.3rem;
   border: 0;
   margin-top: 1rem;
@@ -62,6 +62,32 @@
     background-color: $delete-color;
     background-image: url(delete.svg);
     background-repeat: no-repeat;
+    border-radius: 5px;
+    margin-left: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__disable {
+    background-color: $delete-color;
+    border-radius: 5px;
+    margin-left: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__activate {
+    background-color: $edit-color;
     border-radius: 5px;
     margin-left: .25rem;
     padding: 1.25rem;

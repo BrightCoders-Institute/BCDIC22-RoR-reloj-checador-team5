@@ -57,7 +57,7 @@
           <%= link_to '', edit_employee_path(employee), class: 'btn__edit button' %>
           <%= link_to "#{employee.is_employee == true ? "Disable" : 'Activate'}",
             employee_path(employee),
-            class: 'btn__delete button',
+            class: "#{employee.is_employee == true ? "btn__disable" : 'btn__activate'} button",
             data: {
               turbo_method: :delete,
               turbo_confirm: "Confirm Action"
@@ -67,4 +67,3 @@
     </div>
   <% end %>
 </div>
-
