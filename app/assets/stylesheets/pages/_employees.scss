@@ -5,9 +5,10 @@
     background-color: $secondary-color;
     border-radius: 0.5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: .25rem;
-    text-align: center;
+    padding: 0 1rem;
+    text-align: left;
 
     @include small {
       height: max-content;
@@ -25,8 +26,10 @@
       background-color: $diabled-color;
       border-radius: 1rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       margin: .25rem;
+      padding: 0 1rem;
+      text-align: left;
 
       @include small {
         height: max-content;
