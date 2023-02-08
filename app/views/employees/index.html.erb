@@ -4,9 +4,10 @@
 
   <h1 class='title' >Employee Maganer</h1>
   <a href="<%= new_employee_path %>" class='btn__new' >Add new employee</a>
-<div class='employees__container'> 
-  <% @employees.each do | employee | %>
-    <div class='employees__content'>
+<div class='employees__container'>
+  <% (@employees.sort_by { |e| e.is_employee ? 0 : 1 }).each do | employee | %>
+    <div class= <%= employee.is_employee ? 'employees__content' : 'employees__content__disabled' %> >
+
       <div class='employees__data'>
         <div class='employees__data_name'>
          <%= employee.name %>
@@ -35,26 +36,26 @@
 
       <div class='employees__data'>
         <div class='employees__data_info'>
-          Company: <%= 
+          Company: <%=
             name = ''
             @companies.each do | company |
               name = company[:name] if company[:id] == employee.company_id
             end
-            name != '' ? name : 'No asignet'
+            name != '' ? name : 'No asigned'
           %>
-        </div>
-      </div>
-
-      <div class='employees__data'>
-        <div class='employees__data_info'>
-          Status: <%= employee.is_employee ? 'Working' : 'Disabled' %>
         </div>
       </div>
 
       <div class='employees__data'>
         <div class='btn__container'>
           <%= link_to '', edit_employee_path(employee), class: 'btn__edit button' %>
-          <%= button_to '', employee_path(employee), method: :delete, class: 'btn__delete button' %>
+          <%= link_to "#{employee.is_employee == true ? " " : ' '}",
+            employee_path(employee),
+            class: "#{employee.is_employee == true ? "btn__disable" : 'btn__activate'} button",
+            data: {
+              turbo_method: :delete,
+              turbo_confirm: "Confirm Action"
+            } %>
         </div>
       </div>
     </div>

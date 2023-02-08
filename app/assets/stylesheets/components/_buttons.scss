@@ -1,4 +1,4 @@
-.button {
+button {
   border-radius: 0.3rem;
   border: 0;
   margin-top: 1rem;
@@ -48,10 +48,12 @@
     background-image: url(edit.svg);
     background-repeat: no-repeat;
     border-radius: 5px;
+    height: 3rem;
     margin-right: .25rem;
     padding: 1.25rem;
     text-align: center;
     transition: 0.5s;
+    width: 3rem;
 
     &:hover {
       opacity: 0.5;
@@ -63,10 +65,44 @@
     background-image: url(delete.svg);
     background-repeat: no-repeat;
     border-radius: 5px;
+    height: 3rem;
     margin-left: .25rem;
     padding: 1.25rem;
     text-align: center;
     transition: 0.5s;
+    width: 3rem;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__disable {
+    background-color: $delete-color;
+    background-image: url(delete.svg);
+    border-radius: 5px;
+    height: 3rem;
+    margin-left: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+    width: 3rem;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__activate {
+    background-color: $edit-color;
+    background-image: url(recycling.svg);
+    border-radius: 5px;
+    height: 3rem;
+    margin-left: .25rem;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0.5s;
+    width: 3rem;
 
     &:hover {
       opacity: 0.5;
