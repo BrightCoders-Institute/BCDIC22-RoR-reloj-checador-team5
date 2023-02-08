@@ -1,0 +1,51 @@
+.main {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    text-align: center;
+  }
+}
+
+.chart {
+
+  &__container {
+    background-color: $body-color;
+    border-radius: 10px;
+    box-shadow: $box-shadow-inset;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  &__content {
+    align-items: center;
+    background-color: $body-color;
+    display: flex;
+    margin: 2rem;
+  }
+}
+
+.btn {
+
+  &__reports {
+
+    box-shadow: $box-shadow;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 5px;
+    color: $color;
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    transition: 0.5s;
+    
+    &:hover {
+      box-shadow: none;
+    }
+    
+    &:focus {
+      box-shadow: $box-shadow-inset
+    }
+  }
+}
+

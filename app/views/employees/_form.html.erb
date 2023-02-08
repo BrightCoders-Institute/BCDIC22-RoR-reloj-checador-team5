@@ -1,33 +1,41 @@
-<div class="content">
-	<%=  bootstrap_form_for (@employee) do |form| %>
+<div class="container">
+  <div class='employees__form__container'>
+    <%=  bootstrap_form_for (@employee) do |form| %>
 
-		<% @employee.errors.full_messages.each do |error| %>
-			<div>
-				<%= error %>
-			</div>
-		<% end %>
+      <% @employee.errors.full_messages.each do |error| %>
+        <div>
+          <%= error %>
+        </div>
+      <% end %>
 
-		<div>
-			<%= form.text_field :email %>
-		</div>
+      <div class='employees__form__options'>
+        <div class='employees__form__container'>
+          <%= form.collection_select :company_id, Company.all, :id, :name %>
+        </div>
+      </div>
 
-		<div>
-			<%= form.text_field :name %>
-		</div>
+      <div>
+        <%= form.text_field :email %>
+      </div>
 
-		<div>
-			<%= form.text_field :position %>
-		</div>
+      <div>
+        <%= form.text_field :name %>
+      </div>
 
-		<div>
-			<%= form.text_field :employee %>
-		</div>
+      <div>
+        <%= form.text_field :position %>
+      </div>
 
-		<div>
-			<%= form.text_field :number_private %>
-		</div>
+      <div>
+        <%= form.text_field :employee %>
+      </div>
 
-		<%= form.submit %>
-		<a href="<%= employees_path %>"><button>Cancel</button></a>
-	<% end %>
+      <div>
+        <%= form.text_field :number_private %>
+      </div>
+
+      <%= form.submit class: 'employees__form__button__submit button' %>
+    <% end %>
+      <a href="<%= employees_path %>"><button class='employees__form__button__cancel button'>Cancel</button></a>
+  </div>
 </div>

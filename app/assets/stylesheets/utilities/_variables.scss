@@ -1,16 +1,43 @@
 $--black-color: black;
-$--check-in-color: #75FF7D;
-$--check-off-color: #E65550;
 $--primary-color-dark: #3a414d;
 $--primary-color-darks: #919397;
 $--primary-color-light: #6D9886;
 $--primary-color-light-hover: #6d988685;
 $--secondary-color-dark: rgb(200, 175, 134);
 $--sencondary-color-light: #d98181;
-$--white-color: white;
 $--shadow-text-color: hsl(240, 100%, 27%);
 $--green-check: #b4f5b8;
 $--red-check: #e58581;
 $--primary-font: sans-serif;
 $--box-shadow: 3px 5px 5px rgba(10, 139, 107, 0.8);
 $--background-hover: rgba(0, 0, 0, 0.747);
+
+$hue-color: 225;
+
+$body-color: hsl($hue-color, 60%, 99%);
+$color: hsl($hue-color, 8%, 80%);
+
+$box-shadow: 3px 3px 8px hsl($hue-color, 19%, 67%), -3px -3px 8px hsl($hue-color, 9%, 87%);
+$box-shadow-inset: inset 6px 6px 12px hsl($hue-color, 16%, 25%), inset -6px -6px 12px hsl($hue-color, 15%, 34%);
+
+$secondary-color: hsl($hue-color, 69%, 61%);
+$text-color: hsl($hue-color, 10%, 24%);
+$input-color: hsl($hue-color, 10%, 24%);
+
+$check-in-color: hsl(113, 82%, 78%);
+$check-off-color: hsl(0, 56%, 66%);
+
+$success-color: hsl(113, 70%, 65%);
+$notsuccess-color: hsl(0, 83%, 51%);
+
+$edit-color: hsl(113, 29%, 59%);
+$delete-color: hsl(0, 32%, 50%);
+
+$admin-color: hsl($hue-color, 45%, 65%);
+
+$submit-color: hsl($hue-color, 29%, 59%);
+$cancel-color: hsl($hue-color, 32%, 50%);
+
+$card-color: hsl($hue-color, 33%, 48%);
+
+$diabled-color: grey;
