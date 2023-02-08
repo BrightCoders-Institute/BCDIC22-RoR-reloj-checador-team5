@@ -30,6 +30,8 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
+    disconect_employees
+
     company.destroy
     redirect_to companies_path
   end
@@ -42,5 +44,9 @@ class CompaniesController < ApplicationController
 
   def company
     @company = Company.find(params[:id])
+  end
+
+  def disconect_employees
+    company.employees.update(company_id: nil, is_employee: false)
   end
 end
