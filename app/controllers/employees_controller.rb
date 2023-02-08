@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
+    @companies = Company.all
   end
 
   def show
@@ -13,8 +14,12 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @company = Company.find_by(company_params)
-    @employee = @company.employees.new(employee_params.merge(:is_employee => true))
+    unless company.nil?
+      @employee = company.employees.new(employee_params.merge(:is_employee => true))
+    else
+      @employee = Employee.new(employee_params.merge(:is_employee => false))
+    end
+
     if @employee.save
       redirect_to employees_path
     else
@@ -27,7 +32,7 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    if employee.update(employee_params)
+    if employee.update(employee_params.merge(:is_employee => true))
       redirect_to employees_path
     else
       render :edit, status: :unprocessable_entity
@@ -35,22 +40,24 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-    employee.is_employee = false
-    employee.save
-    redirect_to employees_path
+    if employee.is_employee == true
+      employee.update(is_employee: false)
+    else
+      employee.update(is_employee: true)
+    end
+    redirect_to users_path
   end
 
   private
     def employee_params
-      params.require(:employee).permit(:email, :name, :position, :employee, :number_private) 
+      params.require(:employee).permit(:email, :name, :position, :employee, :number_private, :is_employee, :company_id)
     end
 
     def employee
       @employee = Employee.find(params[:id])
     end
 
-    def company_params
-      params.permit(:name, :id)
+    def company
+      @company = Company.find_by(params[:company_id])
     end
-
 end
