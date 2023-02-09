@@ -4,10 +4,10 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
   def setup
     login
   end
-  # test "should get index" do
-  #   get companies_index_url
-  #   assert_response :success
-  # end
+  test "should get companies" do
+    get companies_url
+    assert_response :success
+  end
   test "companies_create" do 
     post companies_path, params: { company: {
         name: 'google',

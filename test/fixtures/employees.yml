@@ -1,7 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  company: one
+  employee: 1
+  email: emontan@html.ms
+  name: eduard
+  position: gfe
+  number_private: 1
 
 two:
-  company: two
+  employee: 2
+  email: emontan@html.m
+  name: eduards
+  position: gfes
+  number_private: 2
