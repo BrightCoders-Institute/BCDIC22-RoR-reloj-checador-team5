@@ -21,4 +21,17 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
     }
     assert_redirected_to employees_path
   end
+
+  test 'allow to update a employee' do
+    patch employee_path(employees(:one)), params: {
+        employee: {
+          employee: 5,
+          email: 'emontan@html.ms',
+          name: 'eduard',
+          position: 'encargado',
+          number_private: 5
+        }
+    }
+    assert_redirected_to employees_path
+  end
 end
